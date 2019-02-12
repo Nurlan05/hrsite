@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-12 23:28+0400\n"
+"POT-Creation-Date: 2019-02-13 01:44+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,6 +16,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+
 
 #: templates/base.html:39
 msgid "Ana səhifə"
@@ -39,6 +41,7 @@ msgstr "Contact us"
 msgid "Arzuladığınız işi seçin və müraciət edin!"
 msgstr "Choose your dream job and apply "
 
+#: templates/base.html:85
 msgid "Son vakansiyalar"
 msgstr "Latest Posted Jobs"
 
@@ -60,9 +63,22 @@ msgstr "4 minute ago"
 #: templates/base.html:181 templates/base.html:208 templates/base.html:234
 #: templates/base.html:262 templates/base.html:289 templates/base.html:316
 #: templates/base.html:343
-msgid "Hal-hazırda, Böyük Britaniyanın ən böyük infrastruktur müəssisələrindən biri ilə regional İK İş Ortağı üçün axtarış aparıram. Bu maraqlı İK dəyişikliyi proqramından keçərkən təşkilatına qoşulmaq üçün inanılmaz bir fürsətdir. Bu roldən London ofisindən kənara çıxacaqsınız, ancaq Böyük Britaniyada müştərilərlə əməkdaşlıq edəcəksiniz ..."
+msgid ""
+"Hal-hazırda, Böyük Britaniyanın ən böyük infrastruktur müəssisələrindən biri "
+"ilə regional İK İş Ortağı üçün axtarış aparıram. Bu maraqlı İK dəyişikliyi "
+"proqramından keçərkən təşkilatına qoşulmaq üçün inanılmaz bir fürsətdir. Bu "
+"roldən London ofisindən kənara çıxacaqsınız, ancaq Böyük Britaniyada "
+"müştərilərlə əməkdaşlıq edəcəksiniz ..."
+msgstr ""
+"I'm currently working with one of the UK's largest infrastructure businesses "
+"on their search for a Regional HR Business Partner. This is an amazing "
+"opportunity to join the organisation as they go through an exciting HR "
+"change programme. In this role you will be based out of the London office "
+"but will be partnering clients based across the UK so ..."
 
-msgstr "I'm currently working with one of the UK's largest infrastructure businesses on their search for a Regional HR Business Partner. This is an amazing opportunity to join the organisation as they go through an exciting HR change programme. In this role you will be based out of the London office but will be partnering clients based across the UK so ..."
+msgid "İş vakansiyaları"
+msgstr "Job vacancies"
+
 
 #: templates/base.html:104 templates/base.html:131 templates/base.html:158
 #: templates/base.html:185 templates/base.html:212 templates/base.html:238
