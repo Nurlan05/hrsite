@@ -25,7 +25,7 @@ SECRET_KEY = ')%+!g&jjj!41j7v*v-kbjs(#)3gada(8j26n5csbre$c-nm59t'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 ADMIN_SITE_HEADER = "Hrsystem administrasiyası"
 
