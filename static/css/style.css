@@ -75,6 +75,27 @@ body,html{
     background: rgba(225,127,1,0.8);
     border-color: rgba(225,127,1,0.8);
 }
+.apply-btn-content:hover{
+	background:rgba(225, 127, 1, 0.59);
+}
+.latest-content{
+	color:white;
+	text-align: center;
+	margin-top: 10px;
+    padding: 10px;
+    background: rgb(19, 86, 51);
+    border-color: rgb(19, 86, 51);
+}
+
+.sidebar-latest-job {
+    background: #f3f3f3;
+    margin-top: 5px;
+    padding: 5px;
+}
+.all-latest a{
+	color:black !important;
+	text-align: left;
+}
 
 #footer-bottom {
 	text-align: center;

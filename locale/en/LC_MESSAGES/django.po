@@ -39,7 +39,7 @@ msgstr "Contact us"
 
 #: templates/base.html:60
 msgid "Arzuladığınız işi seçin və müraciət edin!"
-msgstr "Choose your dream job and apply "
+msgstr "Choose your dream job and apply! "
 
 #: templates/base.html:85
 msgid "Son vakansiyalar"
