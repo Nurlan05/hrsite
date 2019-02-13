@@ -8,6 +8,8 @@ body,html{
 .custom-nav{
 	background: #fff6  !important;
 	padding: 1rem 1rem !important;
+	transition: background 1.5s;
+  	-webkit-transition: background 1.5s;
 }
 #nav-id{
 	top:40px;
@@ -15,10 +17,19 @@ body,html{
 .custom-nav-scroll{
 	background: white !important;
 	top:0px !important;
+	box-shadow: 2px 2px #a790904d;
 }
 .custom-nav-scroll a{
 	color: black ;
 }
+#full-width-page{
+	height: 40%;
+}
+
+.text-image.page{
+	margin-top: 130px;
+}
+
 .custom-nav a{
 	color: white ;
 }
@@ -36,7 +47,6 @@ body,html{
 	color:white;
 }
 .job-info.ul-footer li{
-	width: 25%;
 	color: white;
 }
 .footer-location {
@@ -46,7 +56,31 @@ body,html{
 .footer-tel{
 	text-align: center;
 }
-#footer {
+
+.each-main-detail {
+	margin-bottom: 2px;
+    background: #e0e0e066;
+
+}
+.job-main-content{
+	margin-top: 15px;
+}
+
+.sidebar-content a{
+	color:white;
+	text-align: center;
+}
+.apply-btn-content {
+    padding: 10px;
+    background: rgba(225,127,1,0.8);
+    border-color: rgba(225,127,1,0.8);
+}
+
+#footer-bottom {
+	text-align: center;
+	position: relative;
+	bottom: 0;
+	width: 100%;
 	margin-top: 10px;
     background: rgb(19, 86, 51);
     color: white;
@@ -200,6 +234,19 @@ height: 100%;
 background-position: center;
 background-repeat: no-repeat;
 background-size: cover;
+}
+
+@media (max-width: 992px){	
+	.footer ul{
+		margin-bottom: 0 !important;
+	}
+	.job-info{
+		display: block;
+	}
+	.job-info li{
+		border:none !important;
+	}
+
 }
 
 @media (max-width: 768px){

@@ -8,5 +8,7 @@ handler404 = '.views.error_view'
 
 urlpatterns=[
     url(r'^$', index, name="index"),
+    url(r'^vacancies/$',job_list,name="job_list"),
+    url(r'^job-detail/$',job_detail,name="job_detail")
 
 ]

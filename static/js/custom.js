@@ -1,6 +1,6 @@
 	window.onscroll = function() {
     var nav = document.getElementById('nav-id');
-    if ( window.pageYOffset > 1 ) {
+    if ( window.pageYOffset > 5 ) {
         nav.classList.add("custom-nav-scroll");
     } else {
         nav.classList.remove("custom-nav-scroll");
