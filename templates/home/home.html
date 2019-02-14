@@ -17,13 +17,13 @@
 			<a   href="{% url 'allapp:job_list' %}" class="get-button">
 			{% trans "Vakansiyalar" %}
 		</a>
-		<a  style="margin-left: 20px;" href="/elaqe" class="get-button">
+		<a  style="margin-left: 20px;" href="{% url 'allapp:contact' %}" class="get-button">
 			{% trans "Əlaqə" %}
 		</a> 
 		</div>
 		<div class="just-mobile">
-			<a href="/vakansiyalar">{% trans "Vakansiyalar" %}</a>
-			<a   href="/elaqe" class="">
+			<a href="{% url 'allapp:job_list' %}">{% trans "Vakansiyalar" %}</a>
+			<a   href="{% url 'allapp:contact' %}" class="">
 			{% trans "Əlaqə" %}
 		</a> 
 		</div>
