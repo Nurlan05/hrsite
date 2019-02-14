@@ -45,6 +45,10 @@ msgstr "Choose your dream job and apply! "
 msgid "Son vakansiyalar"
 msgstr "Latest Posted Jobs"
 
+msgid "Bizimlə Əlaqə"
+msgstr "Contact us"
+
+
 #: templates/base.html:96 templates/base.html:123 templates/base.html:150
 #: templates/base.html:177 templates/base.html:204 templates/base.html:230
 #: templates/base.html:258 templates/base.html:285 templates/base.html:312

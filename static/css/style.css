@@ -67,6 +67,28 @@ div#footer {
 .job-info.ul-footer li{
 	color: white;
 }
+#content-contact{
+
+	margin-top: 20px;
+}
+.card-contact{
+	text-align: center;
+}
+.main-card{
+	border:1px solid;
+	border-color:#8677774d;
+	padding: 30px;
+	margin-bottom: 5px;
+}
+.main-card i {
+	font-size: 50px;
+	color:rgb(19, 87, 52);
+}
+.card-content{
+	color:rgba(225,127,1,0.8);
+	font-weight: bold;
+	margin-top: 5px;
+}
 .footer-location {
     border-right: 1px solid;
     text-align: center;
@@ -119,7 +141,7 @@ div#footer {
     position: absolute;
     bottom: 0;
     width: 100%;
-    background: green;
+    background: rgb(19, 87, 52);
 }
 .job-title a{
 
@@ -256,6 +278,8 @@ position: relative;
 }
 .just a{
 	text-decoration: none !important;
+	font-weight: bold;
+	font-size: 20px;
 }
 .just a:hover{
 	background: white;

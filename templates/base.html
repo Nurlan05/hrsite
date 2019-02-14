@@ -6,7 +6,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}?{% now "U" %}">
@@ -50,7 +50,7 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="#">{% trans "Əlaqə" %}</a>
+        <a class="nav-link" href="{% url 'allapp:contact' %}">{% trans "Əlaqə" %}</a>
       </li>
       </ul>
 
@@ -72,15 +72,15 @@
 				 	</li>
 				 	<li class="col-md-3 footer-location">
 				 	<a href="{% url 'allapp:index' %}">{% trans "Ana səhifə" %}</a> <br>
-				 	<a href="/vacancies">{% trans "Vakansiyalar" %}</a> <br>
-				 	<a href="/haqqimizda">{% trans "Haqqımızda" %}</a> <br>
-				 	<a href="/elaqe">{% trans "Əlaqə" %}</a>
+				 	<a href="{% url 'allapp:job_list' %}">{% trans "Vakansiyalar" %}</a> <br>
+				 	<a href="{% url 'allapp:aboutus' %}">{% trans "Haqqımızda" %}</a> <br>
+				 	<a href="{% url 'allapp:contact' %}">{% trans "Əlaqə" %}</a>
 				 	</li>
 				 	<li class="col-md-3 footer-location">
-				 		mailto:info@domain.com
+				 		<a href="mailto:info@example.com">info@example.com</a>
 				 	</li>
 				 	<li class="col-md-3 footer-tel">
-				 		tel:+994774813913
+				 		<a href="tel:+994774813913">+994774813913</a>
 				 	</li>
 				 </ul>
 			</div>

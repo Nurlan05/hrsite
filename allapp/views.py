@@ -13,3 +13,6 @@ def job_detail(request):
 def about_us(request):
 	context={}
 	return render(request,'aboutus/aboutus.html',context)
+def contact_us(request):
+	context={}
+	return render(request,'contact/contact.html',context)

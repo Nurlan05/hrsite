@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block body %}
+
+<section id="full-width-page">
+	<div class="text-image page">
+		<h1>
+  
+  			{% trans "Bizimlə Əlaqə" %}
+</h1>
+
+		<h1 class="text-header"></h1>
+	</div>
+	<div class="full-screen"></div>
+</section>
+<section id="content-contact">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4 card-contact">
+				<div class="main-card">
+				
+				<i  class="fas fa-envelope"></i>
+				<div class="card-content">info@example.com</div>
+				</div>
+			</div>
+			<div class="col-md-4 card-contact">
+				<div class="main-card">
+					<i class="fas fa-phone"></i>
+					<div class="card-content">+99477546565656</div>
+				</div>
+			</div>
+			<div class="col-md-4 card-contact">
+				<div class="main-card">
+					<i class="fas fa-map-marker-alt"></i>
+					<div class="card-content">Baku,Azerbaijan</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="space-bottom"></div>
+</section>
+
+{% endblock %}
