@@ -10,3 +10,6 @@ def job_list(request):
 def job_detail(request):
 	context={}
 	return render(request,'job/job-detal.html',context)
+def about_us(request):
+	context={}
+	return render(request,'aboutus/aboutus.html',context)

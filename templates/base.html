@@ -14,7 +14,7 @@
     <title>{% trans "İş vakansiyaları" %}</title>
   </head>
   <body>
-
+<div class="all-body">
 
   	{% csrf_token %}
   	<div class="rown col-md-12 top-nav">
@@ -28,7 +28,7 @@
   	<a href="/az"><img src="/static/image/aze.png"></a> | <a href="/en"><img src="/static/image/en.png"></a>
   			</div></div>
   		</div>
-  	</div>
+  
 <nav id="nav-id" class="navbar fixed-top custom-nav navbar-expand-lg navbar-light bg-light">
 	<div class="container">
   <a class="navbar-brand" href="{% url 'allapp:index' %}">Company Logo</a>
@@ -46,7 +46,7 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="#">{% trans "Haqqımızda" %}</a>
+        <a class="nav-link" href="{% url 'allapp:aboutus' %}">{% trans "Haqqımızda" %}</a>
       </li>
 
       <li class="nav-item">
@@ -87,6 +87,7 @@
 		</div>
 
 </section>
+</div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
