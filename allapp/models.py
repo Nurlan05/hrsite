@@ -8,7 +8,7 @@ from django.conf import settings
 class CvSend(models.Model):
 	name=models.CharField(max_length=1500,verbose_name="Ad")
 	surname=models.CharField(max_length=1500,verbose_name="Soyad")
-	email=models.CharField(max_length=1500,verbose_name="Email")
+	email=models.EmailField(max_length=1500,verbose_name="Email")
 	created_date=models.DateTimeField(auto_now_add=True,null=True)
 	cv=models.FileField(verbose_name='Cv')
 	cover_letter=models.FileField(verbose_name="Məktub")
