@@ -21,82 +21,100 @@
 <div class="container">
 <div class="row">
 	<div class="col-md-12">
-		<h1>Hr depatrment</h1>
+		<h1>{{job.title}}</h1>
 	</div>
 		<div class="col-md-8">
 			<div class="job-main-detail">
-				<div class="row each-main-detail">
-	<div class="col-md-6"><strong>Location:</strong>Hong Kong, Hong Kong </div>
-	<div class="col-md-6"><strong>Sector:</strong>FMCG / Consumer Goods, Retail, Luxury & Lifestyle </div>
-				</div>
-				<div class="row each-main-detail">
-	<div class="col-md-6"><strong>Job type:</strong>Permanent </div>
-	<div class="col-md-6"><strong>Salary:</strong>Discretionary Bonus </div>
-				</div>
+				<div class="row">
+	<div class="col-md-6">
+		<div class="each-main-detail">
+		<strong>{% trans 'Yer' %}:</strong> {{ job.job_location.all|join:", " }}</div> </div>
 
-				<div class="row each-main-detail">
-	<div class="col-md-6"><strong>Contact:</strong>Yammie Kwok</div>
-	<div class="col-md-6"><strong>Contact email:</strong>yammiekwok@frazerjones.com</div>
-				</div>
+	<div class="col-md-6">
+		<div class="each-main-detail">
+		<strong>{% trans 'Sektor' %}:</strong> {{job.job_sector}}
+	</div>
+		 </div>
+				
+				
+	<div class="col-md-6">
+<div class="each-main-detail">
+		<strong>{% trans 'İş növü' %}:</strong> {{job.job_type}} </div></div>
+	<div class="col-md-6">
+<div class="each-main-detail">
+		<strong>{% trans 'Maaş' %}:</strong> {{ job.salary }} 
+</div>
+	</div>
+				
 
-				<div class="row each-main-detail">
-	<div class="col-md-6"><strong>Job ref:</strong>120493_1550062071 </div>
-	<div class="col-md-6"><strong>Published:</strong>11 minutes ago</div>
-				</div>
+				
+		<div class="col-md-6">
+<div class="each-main-detail">
+			<strong>{% trans 'Son müraciət tarixi' %}:</strong> {{ job.expiry_date|date:"j F Y" }}
+</div>
+		</div>
 
-				<div class="row each-main-detail">
-	<div class="col-md-6"><strong>Expiry date:</strong>2019-03-15</div>
+	<div class="col-md-6">
+<div class="each-main-detail">
+		<strong>Email:</strong> {{ job.email }}
+</div>
+	</div>
+				
+
+
+				
+
+		<div class="col-md-6">
+<div class="each-main-detail">
+			<strong>{% trans 'Yayımlandı' %}:</strong> {{ job.created_at | timesince }} {% trans 'öncə' %}
+		</div></div>
 				</div>
 			</div>
 			<div class="job-main-content">
-				<p>Our Client
-
-A Senior HR Business Partner position has become available at one of the European-based Luxury Retail Company in Hong Kong. The role will have a predominant focus on Greater China and look after company-wide HR initiatives.
-
-Job Description
-
-    Report into HR Director based in Hong Kong;
-    Work closely with internal business stakeholders in the region to maintain or develop key HR strategies and initiatives;
-    Challenge, support and drive optimal business performances from a HR perspective;
-    Manage HR projects & transformations, talent acquisition, talent development, employee engagement, performance and support on annual reward cycles;
-    Demonstrate relatable experience on supporting the delivery of HR projects, creating compelling employee value proposition to help maintain and attract a talented workforce;
-    Support talent development partnering closely with the business and Talent Development Specialists to strengthen talent pipeline.
-
-Job Requirements
-
-    Bachelor Degree in Human Resources Management or other related discipline;
-    At least 10 years of HR Business Partnering experience in sizable MNC environment;
-    Confident and sophisticated to deal with challenges and changes;
-    Proven leadership ability and passionate in developing career in a leadership role;
-    Resilience to drive change & manage key businesses effectively
-    Strong time management ability and forward thinking with strong analytical and presentation ability;
-    Complete fluency in English, Cantonese and Mandarin is a must.
-
-Interested applicants please Apply Now or contact Yammie Kwok at +852 3008 9071.
-
-The SR Group (Hong Kong) Limited is acting as an Employment Agency in relation to this vacancy.</p>
+				{{job.content|safe }}
 			</div>
 		</div>
 		<div  class="col-md-4 sidebar-content">
 			
-		<a href="#"><div class="apply-btn-content">{% trans "Müraciət et" %}</div></a>
+		<a href="#"><div class="apply-btn-content" data-toggle="modal" data-target="#exampleModalScrollable">{% trans "Müraciət et" %}</div></a>
 		<div class="latest-content">
 			{% trans "Son vakansiyalar" %}
 		</div>
+		{% for job in job_list %}
 		<div class="all-latest">
-			<a href="#">
+			<a href="{{ job.get_absolute_url }}">
 					<div class="sidebar-latest-job">
-			<h1 style="font-size: 20px;">Senior HR Advisor</h1>
-			<span>City of London,London</span><br>
+			<h1 style="font-size: 20px;">{{job.title}}</h1>
+			<span>{{ job.job_location.all|join:", " }}</span><br>
 			<span>4500azn-5000azn</span>
 		</div>
 		</a>
 		</div>
+		{% endfor %}
+
 
 		</div>
 </div>
 </div>
-
+<div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalScrollableTitle">{% trans 'Müraciət et:' %} {{ job.title }}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+     	salam alekum men modalam
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">{% trans 'Bağla' %}</button>
+        <button type="button" class="btn success">{% trans 'Göndər' %}</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 <div class="space-bottom"></div>

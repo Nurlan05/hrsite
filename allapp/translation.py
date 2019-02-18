@@ -1,18 +1,49 @@
 from modeltranslation.translator import translator, TranslationOptions
-from allapps.models import TourType
-from allapps.models import Tours
+from allapp.models import Job,Location,Sector,JobType,ExperienceLevel,ContractType,Hours
 
 
-class TourTypeTranslationOptions(TranslationOptions):
-    fields = ('type_title', 'type_about')
+class JobTranslationOptions(TranslationOptions):
+	fields=('title','content')
+
+translator.register(Job, JobTranslationOptions)
 
 
-translator.register(TourType, TourTypeTranslationOptions)
+class LocationTranslationOptions(TranslationOptions):
+	fields=('city_name',)
 
-class ToursTranslationOptions(TranslationOptions):
-    fields = ('title', 'content')
-
-
-translator.register(Tours, ToursTranslationOptions)
+translator.register(Location, LocationTranslationOptions)
 
 
+
+class SectorTranslationOptions(TranslationOptions):
+	fields=('sector_name',)
+
+translator.register(Sector, SectorTranslationOptions)
+
+class JobTypeTranslationOptions(TranslationOptions):
+	fields=('job_name',)
+
+translator.register(JobType, JobTypeTranslationOptions)
+
+
+
+class ExperienceLevelTranslationOptions(TranslationOptions):
+	fields=('experience_name',)
+
+translator.register(ExperienceLevel, ExperienceLevelTranslationOptions)
+
+
+
+
+class HoursTranslationOptions(TranslationOptions):
+	fields=('hours_name',)
+
+translator.register(Hours, HoursTranslationOptions)
+
+
+
+
+class ContractTypeTranslationOptions(TranslationOptions):
+	fields=('contract_name',)
+
+translator.register(ContractType, ContractTypeTranslationOptions)

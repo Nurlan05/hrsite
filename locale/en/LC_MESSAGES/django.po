@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-13 01:44+0400\n"
+"POT-Creation-Date: 2019-02-18 15:41+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,56 +17,100 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-
-
-#: templates/base.html:39
-msgid "Ana səhifə"
-msgstr "Home"
-
-#: templates/base.html:42 templates/base.html:68 templates/base.html:75
-#: templates/base.html:370
-msgid "Vakansiyalar"
-msgstr "Vacancies"
-
-#: templates/base.html:46 templates/base.html:371
+#: templates/aboutus/aboutus.html:8 templates/aboutus/aboutus.html:18
+#: templates/base.html:49 templates/base.html:76
 msgid "Haqqımızda"
 msgstr "About us"
 
-#: templates/base.html:50 templates/base.html:71 templates/base.html:77
-#: templates/base.html:372
+#: templates/base.html:14
+msgid "İş vakansiyaları"
+msgstr "Job vacancies"
+
+#: templates/base.html:42 templates/base.html:74
+msgid "Ana səhifə"
+msgstr "Home"
+
+#: templates/base.html:45 templates/base.html:75 templates/home/home.html:18
+#: templates/home/home.html:25 templates/job/job-detal.html:10
+#: templates/job/job-list.html:10
+msgid "Vakansiyalar"
+msgstr "Vacancies"
+
+#: templates/base.html:53 templates/base.html:77 templates/home/home.html:21
+#: templates/home/home.html:27
 msgid "Əlaqə"
 msgstr "Contact us"
 
-#: templates/base.html:60
-msgid "Arzuladığınız işi seçin və müraciət edin!"
-msgstr "Choose your dream job and apply! "
-
-#: templates/base.html:85
-msgid "Son vakansiyalar"
-msgstr "Latest Posted Jobs"
-
+#: templates/contact/contact.html:9
 msgid "Bizimlə Əlaqə"
 msgstr "Contact us"
 
+#: templates/home/home.html:10
+msgid "Arzuladığınız işi seçin və müraciət edin!"
+msgstr "Choose your dream job and apply! "
 
-#: templates/base.html:96 templates/base.html:123 templates/base.html:150
-#: templates/base.html:177 templates/base.html:204 templates/base.html:230
-#: templates/base.html:258 templates/base.html:285 templates/base.html:312
-#: templates/base.html:339
+#: templates/home/home.html:35 templates/job/job-detal.html:84
+msgid "Son vakansiyalar"
+msgstr "Latest Posted Jobs"
+
+
+msgid "Yer"
+msgstr "Location"
+
+
+msgid "Sektor"
+msgstr "Sector"
+
+
+msgid "İş növü"
+msgstr "Job Type"
+
+msgid "Maaş"
+msgstr "Salary"
+
+msgid "Son müraciət tarixi"
+msgstr "Expiry date"
+
+
+msgid "Yayımlandı"
+msgstr "Published"
+
+msgid "Müraciət et:"
+msgstr "Apply for"
+
+msgid "Bağla"
+msgstr "Close"
+
+msgid "Göndər"
+msgstr "Apply"
+
+#: templates/home/home.html:46 templates/home/home.html:73
+#: templates/home/home.html:100 templates/home/home.html:127
+#: templates/home/home.html:154 templates/home/home.html:180
+#: templates/home/home.html:208 templates/home/home.html:235
+#: templates/home/home.html:262 templates/home/home.html:289
+#: templates/job/job-list.html:31 templates/job/job-list.html:58
+#: templates/job/job-list.html:86
 msgid "illik"
 msgstr "per amount"
 
-#: templates/base.html:97 templates/base.html:124 templates/base.html:151
-#: templates/base.html:178 templates/base.html:205 templates/base.html:231
-#: templates/base.html:259 templates/base.html:286 templates/base.html:313
-#: templates/base.html:340
-msgid "4 dəqiqə öncə paylaşıldı"
-msgstr "4 minute ago"
+#: templates/home/home.html:47 templates/home/home.html:74
+#: templates/home/home.html:101 templates/home/home.html:128
+#: templates/home/home.html:155 templates/home/home.html:181
+#: templates/home/home.html:209 templates/home/home.html:236
+#: templates/home/home.html:263 templates/home/home.html:290
+#: templates/job/job-list.html:32 templates/job/job-list.html:59
+#: templates/job/job-list.html:87
+msgid "öncə"
+msgstr "ago"
 
-#: templates/base.html:100 templates/base.html:127 templates/base.html:154
-#: templates/base.html:181 templates/base.html:208 templates/base.html:234
-#: templates/base.html:262 templates/base.html:289 templates/base.html:316
-#: templates/base.html:343
+#: templates/home/home.html:50 templates/home/home.html:77
+#: templates/home/home.html:104 templates/home/home.html:131
+#: templates/home/home.html:158 templates/home/home.html:184
+#: templates/home/home.html:212 templates/home/home.html:239
+#: templates/home/home.html:266 templates/home/home.html:293
+#: templates/job/job-list.html:35 templates/job/job-list.html:62
+#: templates/job/job-list.html:90
 msgid ""
 "Hal-hazırda, Böyük Britaniyanın ən böyük infrastruktur müəssisələrindən biri "
 "ilə regional İK İş Ortağı üçün axtarış aparıram. Bu maraqlı İK dəyişikliyi "
@@ -80,36 +124,39 @@ msgstr ""
 "change programme. In this role you will be based out of the London office "
 "but will be partnering clients based across the UK so ..."
 
-msgid "İş vakansiyaları"
-msgstr "Job vacancies"
-
-
-#: templates/base.html:104 templates/base.html:131 templates/base.html:158
-#: templates/base.html:185 templates/base.html:212 templates/base.html:238
-#: templates/base.html:266 templates/base.html:293 templates/base.html:320
-#: templates/base.html:347
+#: templates/home/home.html:54 templates/home/home.html:81
+#: templates/home/home.html:108 templates/home/home.html:135
+#: templates/home/home.html:162 templates/home/home.html:188
+#: templates/home/home.html:216 templates/home/home.html:243
+#: templates/home/home.html:270 templates/home/home.html:297
+#: templates/job/job-list.html:39 templates/job/job-list.html:66
+#: templates/job/job-list.html:94
 msgid "Yadda saxla"
 msgstr "Save job"
 
-#: templates/base.html:106 templates/base.html:133 templates/base.html:160
-#: templates/base.html:187 templates/base.html:214 templates/base.html:240
-#: templates/base.html:268 templates/base.html:295 templates/base.html:322
-#: templates/base.html:349
+#: templates/home/home.html:56 templates/home/home.html:83
+#: templates/home/home.html:110 templates/home/home.html:137
+#: templates/home/home.html:164 templates/home/home.html:190
+#: templates/home/home.html:218 templates/home/home.html:245
+#: templates/home/home.html:272 templates/home/home.html:299
+#: templates/job/job-detal.html:82 templates/job/job-list.html:41
+#: templates/job/job-list.html:68 templates/job/job-list.html:96
 msgid "Müraciət et"
 msgstr "Apply"
 
-#: templates/base.html:107 templates/base.html:134 templates/base.html:161
-#: templates/base.html:188 templates/base.html:215 templates/base.html:241
-#: templates/base.html:269 templates/base.html:296 templates/base.html:323
-#: templates/base.html:350
+#: templates/home/home.html:57 templates/home/home.html:84
+#: templates/home/home.html:111 templates/home/home.html:138
+#: templates/home/home.html:165 templates/home/home.html:191
+#: templates/home/home.html:219 templates/home/home.html:246
+#: templates/home/home.html:273 templates/home/home.html:300
+#: templates/job/job-list.html:42 templates/job/job-list.html:69
+#: templates/job/job-list.html:97
 msgid "Ətraflı"
 msgstr "Read more"
 
-#: templates/base.html:369
-#, fuzzy
-#| msgid "Ana səhifə"
-msgid "Ana Səhifə"
-msgstr "Home"
+#: templates/job/cv-list.html:10
+msgid "Bütün göndərilmiş CV-lər"
+msgstr "All Sended CV"
 
 #: venv/lib/python3.5/site-packages/django/contrib/messages/apps.py:7
 msgid "Messages"
@@ -1066,16 +1113,20 @@ msgid_plural "%d hours"
 msgstr[0] ""
 msgstr[1] ""
 
+
+
+
 #: venv/lib/python3.5/site-packages/django/utils/timesince.py:16
 #, python-format
 msgid "%d minute"
 msgid_plural "%d minutes"
 msgstr[0] ""
-msgstr[1] ""
+msgstr[1] "diq"
 
 #: venv/lib/python3.5/site-packages/django/utils/timesince.py:52
 msgid "0 minutes"
 msgstr ""
+
 
 #: venv/lib/python3.5/site-packages/django/views/csrf.py:109
 msgid "Forbidden"
@@ -1207,3 +1258,12 @@ msgstr ""
 #, python-format
 msgid "Index of %(directory)s"
 msgstr ""
+
+#: venv/lib/python3.5/site-packages/modeltranslation/widgets.py:25
+msgid "None"
+msgstr ""
+
+#, fuzzy
+#~| msgid "Ana səhifə"
+#~ msgid "Ana Səhifə"
+#~ msgstr "Home"

@@ -20,26 +20,31 @@
 	</div>
 <div class="container">
 <div class="row">
+
+
+{% for job in job_list %}
 		<div class="col-md-6">
 		
 			<div class="job-content">
 				<div class="job-title">
-					<a href="#"><a href="#">HR Business Partner</a></a>
+					<a href="{{ job.get_absolute_url}}">{{ job.title }}</a>
 				</div>
 				<ul class="job-info">
-<li class="results-job-location">London, England</li>   
-<li class="results-salary">£50000 - £65000 {% trans 'illik' %}</li>
-<li class="results-posted-at"> {% trans '4 dəqiqə öncə paylaşıldı' %} </li>
+<li class="results-job-location">{{ job.job_location.all|join:", " }}</li>   
+{% if job.salary %}
+<li class="results-salary">{{ job.salary }}</li>
+{% endif %}
+<li class="results-posted-at">{{ job.created_at | timesince }} {% trans 'öncə' %} </li>
 </ul>
 <div class="job-sub-detail">
-	{% trans 'Hal-hazırda, Böyük Britaniyanın ən böyük infrastruktur müəssisələrindən biri ilə regional İK İş Ortağı üçün axtarış aparıram. Bu maraqlı İK dəyişikliyi proqramından keçərkən təşkilatına qoşulmaq üçün inanılmaz bir fürsətdir. Bu roldən London ofisindən kənara çıxacaqsınız, ancaq Böyük Britaniyada müştərilərlə əməkdaşlıq edəcəksiniz ...' %}
+{{ job.content|safe|slice:":200" }} ...
+
 </div>
 <div class="job-button">
 	<ul class="job-button-info">
-		<li class="save-btn"><a href="#">{% trans "Yadda saxla" %}</a></li>
-
+		
 		<li class="apply-btn"><a href="#">{% trans "Müraciət et" %}</a></li>
-		<li class="save-btn"><a href="{% url 'allapp:job_detail' %}">{% trans "Ətraflı" %}</a></li>
+		<li class="save-btn"><a href="{{job.get_absolute_url}}">{% trans "Ətraflı" %}</a></li>
 	</ul>
 </div>
 	
@@ -47,60 +52,7 @@
 		
 	</div>
 
-		<div class="col-md-6 ">
-		
-			<div class="job-content">
-				<div class="job-title">
-					<a href="#"><a href="#">HR Business Partner</a></a>
-				</div>
-				<ul class="job-info">
-<li class="results-job-location">London, England</li>   
-<li class="results-salary">£50000 - £65000 {% trans 'illik' %}</li>
-<li class="results-posted-at"> {% trans '4 dəqiqə öncə paylaşıldı' %} </li>
-</ul>
-<div class="job-sub-detail">
-	{% trans 'Hal-hazırda, Böyük Britaniyanın ən böyük infrastruktur müəssisələrindən biri ilə regional İK İş Ortağı üçün axtarış aparıram. Bu maraqlı İK dəyişikliyi proqramından keçərkən təşkilatına qoşulmaq üçün inanılmaz bir fürsətdir. Bu roldən London ofisindən kənara çıxacaqsınız, ancaq Böyük Britaniyada müştərilərlə əməkdaşlıq edəcəksiniz ...' %}
-</div>
-<div class="job-button">
-	<ul class="job-button-info">
-		<li class="save-btn"><a href="#">{% trans "Yadda saxla" %}</a></li>
-
-		<li class="apply-btn"><a href="#">{% trans "Müraciət et" %}</a></li>
-		<li class="save-btn"><a href="{% url 'allapp:job_detail' %}">{% trans "Ətraflı" %}</a></li>
-	</ul>
-</div>
-	
-		</div>
-
-		
-	</div>
-
-		<div class="col-md-6 ">
-		
-			<div class="job-content">
-				<div class="job-title">
-					<a href="#"><a href="#">HR Business Partner</a></a>
-				</div>
-				<ul class="job-info">
-<li class="results-job-location">London, England</li>   
-<li class="results-salary">£50000 - £65000 {% trans 'illik' %}</li>
-<li class="results-posted-at"> {% trans '4 dəqiqə öncə paylaşıldı' %} </li>
-</ul>
-<div class="job-sub-detail">
-	{% trans 'Hal-hazırda, Böyük Britaniyanın ən böyük infrastruktur müəssisələrindən biri ilə regional İK İş Ortağı üçün axtarış aparıram. Bu maraqlı İK dəyişikliyi proqramından keçərkən təşkilatına qoşulmaq üçün inanılmaz bir fürsətdir. Bu roldən London ofisindən kənara çıxacaqsınız, ancaq Böyük Britaniyada müştərilərlə əməkdaşlıq edəcəksiniz ...' %}
-</div>
-<div class="job-button">
-	<ul class="job-button-info">
-		<li class="save-btn"><a href="#">{% trans "Yadda saxla" %}</a></li>
-
-		<li class="apply-btn"><a href="#">{% trans "Müraciət et" %}</a></li>
-		<li class="save-btn"><a href="{% url 'allapp:job_detail' %}">{% trans "Ətraflı" %}</a></li>
-	</ul>
-</div>
-	
-		</div>
-		
-	</div>
+{% endfor %}
 
 </div>
 </div>

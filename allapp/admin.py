@@ -1,2 +1,44 @@
 from django.contrib import admin
-# Register your models here.
+from .models import Job,Location,Sector,JobType,ExperienceLevel,ContractType,Hours
+
+
+@admin.register(Location)
+class LocationAdmin(admin.ModelAdmin):
+	exclude=('city_name',)
+	list_display = ('city_name','slug')
+
+@admin.register(Sector)
+class SectorAdmin(admin.ModelAdmin):
+	exclude=('sector_name',)
+	list_display = ('sector_name','slug')
+
+
+@admin.register(JobType)
+class JobTypeAdmin(admin.ModelAdmin):
+	exclude=('job_name',)
+	list_display = ('job_name','slug')
+
+@admin.register(ContractType)
+class ContractTypeAdmin(admin.ModelAdmin):
+	exclude=('contract_name',)
+	list_display = ('contract_name','slug')
+
+
+
+@admin.register(ExperienceLevel)
+class ExperienceLevelAdmin(admin.ModelAdmin):
+	exclude=('experience_name',)
+	list_display = ('experience_name','slug')
+
+
+@admin.register(Hours)
+class HoursAdmin(admin.ModelAdmin):
+	exclude=('hours_name',)
+	list_display = ('hours_name','slug')
+
+
+@admin.register(Job)
+class JobAdmin(admin.ModelAdmin):
+	exclude=('title','content')
+	list_display = ('title','slug')
+	search_fields = ('title', 'content')
