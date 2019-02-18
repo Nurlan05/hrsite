@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 {% load i18n %}
 {% block body %}
 
@@ -106,11 +107,16 @@
         </button>
       </div>
       <div class="modal-body">
-     	salam alekum men modalam
+     	<form  method="POST" enctype="multipart/form-data">
+     		{% csrf_token %}
+     		{{ form|crispy }}
+     		{{ form.media  }}
+     	
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">{% trans 'Bağla' %}</button>
-        <button type="button" class="btn success">{% trans 'Göndər' %}</button>
+        <button type="submit" class="btn success">{% trans 'Göndər' %}</button>
+    </form>
       </div>
     </div>
   </div>

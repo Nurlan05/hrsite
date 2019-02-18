@@ -1,6 +1,6 @@
 from django.contrib import admin
-from .models import Job,Location,Sector,JobType,ExperienceLevel,ContractType,Hours
-
+from .models import CvSend,Job,Location,Sector,JobType,ExperienceLevel,ContractType,Hours
+admin.site.register(CvSend)
 
 @admin.register(Location)
 class LocationAdmin(admin.ModelAdmin):

@@ -4,6 +4,20 @@ from django.urls import reverse
 from allapp.helper import slugify
 from django.conf import settings
 
+
+class CvSend(models.Model):
+	name=models.CharField(max_length=1500,verbose_name="Ad")
+	surname=models.CharField(max_length=1500,verbose_name="Soyad")
+	email=models.CharField(max_length=1500,verbose_name="Email")
+	created_date=models.DateTimeField(auto_now_add=True,null=True)
+	cv=models.FileField(verbose_name='Cv')
+	cover_letter=models.FileField(verbose_name="Məktub")
+	def __str__(self):
+		return ('%s') %(self.name + " " + self.surname)
+	class Meta:
+		verbose_name="CV"
+		verbose_name_plural="ALL CV"
+
 class Location(models.Model):
 	city_name=models.CharField(max_length=1500,verbose_name="City Name")
 	slug=models.SlugField(editable=False,unique=True,verbose_name="Slug")

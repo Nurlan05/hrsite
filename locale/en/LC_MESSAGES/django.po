@@ -142,7 +142,7 @@ msgstr "Save job"
 #: templates/job/job-detal.html:82 templates/job/job-list.html:41
 #: templates/job/job-list.html:68 templates/job/job-list.html:96
 msgid "Müraciət et"
-msgstr "Apply"
+msgstr "Apply Now"
 
 #: templates/home/home.html:57 templates/home/home.html:84
 #: templates/home/home.html:111 templates/home/home.html:138
