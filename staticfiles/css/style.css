@@ -2,10 +2,20 @@ body,html{
 	height: 100%;
 	margin:0;
 	padding:0;
+	font-family: sans-serif !important;
 }
 *{
 	text-decoration: none !important;
 	outline: none !important;
+}
+.form-i{
+	color:green;
+}
+p a{
+	color:rgba(225,127,1,0.8) !important;
+}
+.form-control-form-input{
+	padding: 0;
 }
 .custom-nav{
 	background: #fff6  !important;
@@ -101,11 +111,18 @@ div#footer {
 .each-main-detail {
 	margin-bottom: 2px;
     background: #e0e0e066;
+    padding: 5px;
 
 }
 .job-main-content{
 	margin-top: 15px;
 }
+
+.btn.success {
+    background: rgb(19, 86, 51);
+    color: white;
+}
+
 
 .sidebar-content a{
 	color:white;
@@ -184,9 +201,14 @@ div#footer {
 }
 .apply-btn{
 
-	padding:5px;
+	padding:5px 20px;
     background: rgba(19,87,52,0.8);
     border-color: rgba(19,87,52,0.8);
+}
+.apply-form{
+	padding: 30px;
+	margin-top:30px;
+	background-color: #e0e0e066;
 }
 .apply-btn a{
 	color:white;
@@ -197,6 +219,7 @@ div#footer {
     border: 1px solid;
     border-color: #8677774d;
     margin: 5px;
+    width: 100%;
 }
 .custom-item a {
 	color: white !important;
@@ -314,6 +337,9 @@ background-size: cover;
 	}
 	.full-screen{
 		height: 100%;
+	}
+	.aditional{
+		margin-top: 30px;
 	}
 	.just a{
 		display: none;
