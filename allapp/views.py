@@ -27,6 +27,7 @@ def job_detail(request,slug):
 
 		if form.is_valid():
 			cv=form.save()
+			cv.apply_name=job.title
 			cv.apply_for=job.slug
 			cv.save()
 			messages.success(request,_('Məlumatlarınız uğurla göndərildi!'))
