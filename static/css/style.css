@@ -31,6 +31,65 @@ p a{
 	top:0px !important;
 	box-shadow: 2px 2px #a790904d;
 }
+
+.extras{
+	margin-left: 15px;
+}
+
+/*collapse*/
+.down i{
+transform:rotate(90deg);
+}
+
+.collapsible {
+  background-color: #f1f1f1;
+  color: rgba(19,87,52,0.8);
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  border-bottom: 1px solid #17151533;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.active, .collapsible:hover {
+  background-color: #f1f1f1;
+}
+.sub-content {
+    padding: 10px;
+    border-bottom: 1px solid #17151533 !important;
+}
+.sub-link {
+    color: rgba(35, 38, 36, 0.8);
+}
+
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  background-color: #f1f1f1;
+  transition: max-height 0.2s ease-out;
+  border-bottom: 1px solid #17151533 !important;
+}
+.content a:hover{
+	color:rgba(225,127,1,0.8);
+}
+
+
+/*end collapse*/
+
+
+
+
+
+
+
+
+
 .custom-nav-scroll a{
 	color: black ;
 }

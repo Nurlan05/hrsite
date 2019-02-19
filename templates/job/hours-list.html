@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
 {% load crispy_forms_tags %}
 
 {% block body %}
@@ -9,7 +10,7 @@
 	<div class="text-image page">
 		<h1>
   
-  			{% trans "Vakansiyalar" %}
+  			{{topic_name}}
 </h1>
 
 		<h1 class="text-header"></h1>
@@ -91,7 +92,7 @@
 <button class="collapsible"><div class="col-title"><i class="fa fa-fw fa-caret-right"></i>{% trans "Yer" %}</div></button>
 <div class="content">
 {% for loc in location_list %}
-<a class="sub-link" href="/yer/{{loc.slug }}">
+<a class="sub-link" href="/yer/{{ loc.slug }}">
 	 <div class="sub-content">
 		{{ loc.city_name }}
  	</div>
@@ -134,7 +135,11 @@ for (i = 0; i < coll.length; i++) {
 	</div>
 </div>
 <div class="col-md-8">
-{% for job in job_list %}
+		<strong style="margin-left: 20px;">
+			
+		{{job_count}} {% trans "iş tapıldı" %}</strong>
+		<hr>
+{% for job in alljobs %}
 		<div class="col-md-12 extras">
 		
 			<div class="job-content">

@@ -34,11 +34,12 @@
 		<div class="title-text">
 		<h1>{% trans 'Son vakansiyalar' %}</h1>
 	</div>
-
+<div class="container">
+<div class="row">
 
 {% for job in last_job %}		
 
-	<div class="row col-md-12 job-detail">
+	<div  class="col-md-6">
 		
 			<div class="job-content">
 				<div class="job-title">
@@ -69,6 +70,8 @@
 
 
 {% endfor %}
+</div>
+</div>
 <div class="space-bottom"></div>
 
 </section>

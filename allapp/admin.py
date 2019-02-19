@@ -1,7 +1,15 @@
 from django.contrib import admin
-from .models import CvSend,Job,Location,Sector,JobType,ExperienceLevel,ContractType,Hours
+from .models import AboutUs,ContactUs,CvSend,Job,Location,Sector,JobType,ExperienceLevel,ContractType,Hours
 
 
+@admin.register(AboutUs)
+class AboutUsAdmin(admin.ModelAdmin):
+	exclude=('a_title','a_content')
+	list_display = ('a_title',)
+
+@admin.register(ContactUs)
+class ContactUsAdmin(admin.ModelAdmin):
+	list_display = ('email','telphone','location')
 
 @admin.register(Location)
 class LocationAdmin(admin.ModelAdmin):

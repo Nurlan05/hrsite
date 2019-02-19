@@ -1,5 +1,5 @@
 from modeltranslation.translator import translator, TranslationOptions
-from allapp.models import Job,Location,Sector,JobType,ExperienceLevel,ContractType,Hours
+from allapp.models import AboutUs,ContactUs,Job,Location,Sector,JobType,ExperienceLevel,ContractType,Hours
 
 
 class JobTranslationOptions(TranslationOptions):
@@ -47,3 +47,8 @@ class ContractTypeTranslationOptions(TranslationOptions):
 	fields=('contract_name',)
 
 translator.register(ContractType, ContractTypeTranslationOptions)
+
+class AboutUsTranslationOptions(TranslationOptions):
+	fields=('a_title','a_content')
+
+translator.register(AboutUs, AboutUsTranslationOptions)

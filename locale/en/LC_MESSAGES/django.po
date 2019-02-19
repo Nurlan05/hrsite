@@ -42,6 +42,9 @@ msgstr "Your information has been  successfuly sended!"
 msgid "Haqqımızda"
 msgstr "About us"
 
+msgid "iş tapıldı"
+msgstr "found jobs"
+
 #: templates/base.html:15
 msgid "İş vakansiyaları"
 msgstr "Job vacancies"
@@ -104,6 +107,9 @@ msgstr "Contract Type"
 msgid "Yer"
 msgstr "Location"
 
+msgid "Növbə"
+msgstr "Hours"
+
 #: templates/job/apply-detal.html:53 templates/job/job-detal.html:55
 msgid "Maaş"
 msgstr "Salary"
@@ -135,6 +141,9 @@ msgstr "Expiry date"
 #: templates/job/job-detal.html:114
 msgid "Müraciət et:"
 msgstr "Apply for"
+
+msgid "İş təcrübəsi"
+msgstr "Experience Level"
 
 #: templates/job/job-detal.html:133
 msgid "Bağla"

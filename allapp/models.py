@@ -5,6 +5,35 @@ from allapp.helper import slugify
 from django.conf import settings
 from django.utils.translation import ugettext_lazy as _
 
+
+class AboutUs(models.Model):
+	a_title=models.CharField(max_length=1500,verbose_name="Title")
+	a_content=RichTextField(verbose_name="Content")
+	def __str__(self):
+		return ('%s') %(self.a_title)
+	class Meta:
+		verbose_name="About us"
+		verbose_name_plural="About us"
+	def save(self, *args, **kwargs):
+	  	self.slug = slugify(self.a_title)
+	  	super(AboutUs, self).save(*args, **kwargs)
+
+class ContactUs(models.Model):
+	email=models.EmailField(verbose_name="Email")
+	telphone=models.CharField(max_length=1500,verbose_name="Telphone")
+	location=models.CharField(max_length=1500,verbose_name="Location")
+	def __str__(self):
+		return ('%s') %(self.email)
+	class Meta:
+		verbose_name="Contact us"
+		verbose_name_plural="Contact us"
+	def save(self, *args, **kwargs):
+	  	self.slug = slugify(self.email)
+	  	super(ContactUs, self).save(*args, **kwargs)
+
+
+
+
 class Location(models.Model):
 	city_name=models.CharField(max_length=1500,verbose_name="City Name")
 	slug=models.SlugField(editable=False,unique=True,verbose_name="Slug")
@@ -115,7 +144,7 @@ class Job(models.Model):
 	  	super(Job, self).save(*args, **kwargs)
 	  	self.slug = "{}-{}".format(slugify(self.title), self.id)
 	  	super(Job, self).save(*args, **kwargs)
-
+    
 
 
 class CvSend(models.Model):
