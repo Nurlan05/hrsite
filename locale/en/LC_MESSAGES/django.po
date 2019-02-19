@@ -35,7 +35,7 @@ msgstr "Cover Letter"
 
 #: allapp/views.py:31 allapp/views.py:51
 msgid "Məlumatlarınız uğurla göndərildi!"
-msgstr "Your information has been send successfuly!"
+msgstr "Your information has been  successfuly sended!"
 
 #: templates/aboutus/aboutus.html:8 templates/aboutus/aboutus.html:18
 #: templates/base.html:60 templates/base.html:87
