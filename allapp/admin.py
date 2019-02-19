@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import CvSend,Job,Location,Sector,JobType,ExperienceLevel,ContractType,Hours
-admin.site.register(CvSend)
+
+
 
 @admin.register(Location)
 class LocationAdmin(admin.ModelAdmin):
@@ -42,3 +43,7 @@ class JobAdmin(admin.ModelAdmin):
 	exclude=('title','content')
 	list_display = ('title','slug')
 	search_fields = ('title', 'content')
+@admin.register(CvSend)
+class CvSendAdmin(admin.ModelAdmin):
+	list_display = ('name','surname','apply_name','created_date')
+	list_display_link=('name','surname')

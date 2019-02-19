@@ -8,6 +8,15 @@ body,html{
 	text-decoration: none !important;
 	outline: none !important;
 }
+.form-i{
+	color:green;
+}
+p a{
+	color:rgba(225,127,1,0.8) !important;
+}
+.form-control-form-input{
+	padding: 0;
+}
 .custom-nav{
 	background: #fff6  !important;
 	padding: 1rem 1rem !important;
@@ -196,6 +205,11 @@ div#footer {
     background: rgba(19,87,52,0.8);
     border-color: rgba(19,87,52,0.8);
 }
+.apply-form{
+	padding: 30px;
+	margin-top:30px;
+	background-color: #e0e0e066;
+}
 .apply-btn a{
 	color:white;
 }
@@ -323,6 +337,9 @@ background-size: cover;
 	}
 	.full-screen{
 		height: 100%;
+	}
+	.aditional{
+		margin-top: 30px;
 	}
 	.just a{
 		display: none;

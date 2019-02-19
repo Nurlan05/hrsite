@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-18 15:41+0400\n"
+"POT-Creation-Date: 2019-02-19 02:51+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,8 +17,24 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#: allapp/form.py:7 allapp/form.py:29
+msgid "Ad"
+msgstr "Name"
+
+#: allapp/form.py:8 allapp/form.py:30
+msgid "Soyad"
+msgstr "Surname"
+
+#: allapp/form.py:9
+msgid "Cv"
+msgstr ""
+
+#: allapp/form.py:14 allapp/form.py:31
+msgid "Tövsiyyə Məktubu"
+msgstr "Cover Letter"
+
 #: templates/aboutus/aboutus.html:8 templates/aboutus/aboutus.html:18
-#: templates/base.html:49 templates/base.html:76
+#: templates/base.html:50 templates/base.html:77
 msgid "Haqqımızda"
 msgstr "About us"
 
@@ -26,17 +42,17 @@ msgstr "About us"
 msgid "İş vakansiyaları"
 msgstr "Job vacancies"
 
-#: templates/base.html:42 templates/base.html:74
+#: templates/base.html:43 templates/base.html:75
 msgid "Ana səhifə"
 msgstr "Home"
 
-#: templates/base.html:45 templates/base.html:75 templates/home/home.html:18
-#: templates/home/home.html:25 templates/job/job-detal.html:10
-#: templates/job/job-list.html:10
+#: templates/base.html:46 templates/base.html:76 templates/home/home.html:18
+#: templates/home/home.html:25 templates/job/apply-detal.html:11
+#: templates/job/job-detal.html:11 templates/job/job-list.html:10
 msgid "Vakansiyalar"
 msgstr "Vacancies"
 
-#: templates/base.html:53 templates/base.html:77 templates/home/home.html:21
+#: templates/base.html:54 templates/base.html:78 templates/home/home.html:21
 #: templates/home/home.html:27
 msgid "Əlaqə"
 msgstr "Contact us"
@@ -49,114 +65,93 @@ msgstr "Contact us"
 msgid "Arzuladığınız işi seçin və müraciət edin!"
 msgstr "Choose your dream job and apply! "
 
-#: templates/home/home.html:35 templates/job/job-detal.html:84
+#: templates/home/home.html:35 templates/job/job-detal.html:82
 msgid "Son vakansiyalar"
 msgstr "Latest Posted Jobs"
 
-
-msgid "Yer"
-msgstr "Location"
-
-
-msgid "Sektor"
-msgstr "Sector"
-
-
-msgid "İş növü"
-msgstr "Job Type"
-
-msgid "Maaş"
-msgstr "Salary"
-
-msgid "Son müraciət tarixi"
-msgstr "Expiry date"
-
-
-msgid "Yayımlandı"
-msgstr "Published"
-
-msgid "Müraciət et:"
-msgstr "Apply for"
-
-msgid "Bağla"
-msgstr "Close"
-
-msgid "Göndər"
-msgstr "Apply"
-
-#: templates/home/home.html:46 templates/home/home.html:73
-#: templates/home/home.html:100 templates/home/home.html:127
-#: templates/home/home.html:154 templates/home/home.html:180
-#: templates/home/home.html:208 templates/home/home.html:235
-#: templates/home/home.html:262 templates/home/home.html:289
-#: templates/job/job-list.html:31 templates/job/job-list.html:58
-#: templates/job/job-list.html:86
-msgid "illik"
-msgstr "per amount"
-
-#: templates/home/home.html:47 templates/home/home.html:74
-#: templates/home/home.html:101 templates/home/home.html:128
-#: templates/home/home.html:155 templates/home/home.html:181
-#: templates/home/home.html:209 templates/home/home.html:236
-#: templates/home/home.html:263 templates/home/home.html:290
-#: templates/job/job-list.html:32 templates/job/job-list.html:59
-#: templates/job/job-list.html:87
+#: templates/home/home.html:52 templates/job/job-detal.html:70
+#: templates/job/job-list.html:37
 msgid "öncə"
 msgstr "ago"
 
-#: templates/home/home.html:50 templates/home/home.html:77
-#: templates/home/home.html:104 templates/home/home.html:131
-#: templates/home/home.html:158 templates/home/home.html:184
-#: templates/home/home.html:212 templates/home/home.html:239
-#: templates/home/home.html:266 templates/home/home.html:293
-#: templates/job/job-list.html:35 templates/job/job-list.html:62
-#: templates/job/job-list.html:90
-msgid ""
-"Hal-hazırda, Böyük Britaniyanın ən böyük infrastruktur müəssisələrindən biri "
-"ilə regional İK İş Ortağı üçün axtarış aparıram. Bu maraqlı İK dəyişikliyi "
-"proqramından keçərkən təşkilatına qoşulmaq üçün inanılmaz bir fürsətdir. Bu "
-"roldən London ofisindən kənara çıxacaqsınız, ancaq Böyük Britaniyada "
-"müştərilərlə əməkdaşlıq edəcəksiniz ..."
-msgstr ""
-"I'm currently working with one of the UK's largest infrastructure businesses "
-"on their search for a Regional HR Business Partner. This is an amazing "
-"opportunity to join the organisation as they go through an exciting HR "
-"change programme. In this role you will be based out of the London office "
-"but will be partnering clients based across the UK so ..."
-
-#: templates/home/home.html:54 templates/home/home.html:81
-#: templates/home/home.html:108 templates/home/home.html:135
-#: templates/home/home.html:162 templates/home/home.html:188
-#: templates/home/home.html:216 templates/home/home.html:243
-#: templates/home/home.html:270 templates/home/home.html:297
-#: templates/job/job-list.html:39 templates/job/job-list.html:66
-#: templates/job/job-list.html:94
+#: templates/home/home.html:59
 msgid "Yadda saxla"
 msgstr "Save job"
 
-#: templates/home/home.html:56 templates/home/home.html:83
-#: templates/home/home.html:110 templates/home/home.html:137
-#: templates/home/home.html:164 templates/home/home.html:190
-#: templates/home/home.html:218 templates/home/home.html:245
-#: templates/home/home.html:272 templates/home/home.html:299
-#: templates/job/job-detal.html:82 templates/job/job-list.html:41
-#: templates/job/job-list.html:68 templates/job/job-list.html:96
+#: templates/home/home.html:61 templates/job/apply-detal.html:28
+#: templates/job/job-detal.html:80 templates/job/job-list.html:46
 msgid "Müraciət et"
 msgstr "Apply Now"
 
-#: templates/home/home.html:57 templates/home/home.html:84
-#: templates/home/home.html:111 templates/home/home.html:138
-#: templates/home/home.html:165 templates/home/home.html:191
-#: templates/home/home.html:219 templates/home/home.html:246
-#: templates/home/home.html:273 templates/home/home.html:300
-#: templates/job/job-list.html:42 templates/job/job-list.html:69
-#: templates/job/job-list.html:97
+#: templates/home/home.html:62 templates/job/job-list.html:47
 msgid "Ətraflı"
 msgstr "Read more"
 
 #: templates/job/cv-list.html:10
 msgid "Bütün göndərilmiş CV-lər"
 msgstr "All Sended CV"
+
+#: templates/job/job-detal.html:32
+msgid "Yer"
+msgstr "Location"
+
+msgid "İş haqqında məlumat"
+msgstr "Job information"
+
+
+#: templates/job/job-detal.html:36
+msgid "Sektor"
+msgstr "Sector"
+
+#: templates/job/job-detal.html:43
+msgid "İş növü"
+msgstr "Job Type"
+
+#: templates/job/job-detal.html:46
+msgid "Maaş"
+msgstr "Salary"
+
+msgid "Kontrakt növü"
+msgstr "Contract Type"
+
+#: templates/job/job-detal.html:54
+msgid "Son müraciət tarixi"
+msgstr "Expiry date"
+
+#: templates/job/job-detal.html:70
+msgid "Yayımlandı"
+msgstr "Published"
+
+#: templates/job/job-detal.html:105
+msgid "Müraciət et:"
+msgstr "Apply for"
+
+#: templates/job/job-detal.html:124
+msgid "Bağla"
+msgstr "Close"
+
+#: templates/job/job-detal.html:125
+msgid "Göndər"
+msgstr "Apply"
+
+#: venv/lib/python3.5/site-packages/crispy_forms/tests/test_form_helper.py:134
+#: venv/lib/python3.5/site-packages/crispy_forms/tests/test_form_helper.py:144
+#: venv/lib/python3.5/site-packages/django/forms/fields.py:56
+msgid "This field is required."
+msgstr ""
+
+#: venv/lib/python3.5/site-packages/crispy_forms/tests/test_layout.py:348
+msgid "i18n text"
+msgstr ""
+
+#: venv/lib/python3.5/site-packages/crispy_forms/tests/test_layout.py:350
+msgid "i18n legend"
+msgstr ""
+
+#: venv/lib/python3.5/site-packages/crispy_forms/tests/test_layout_objects.py:131
+#: venv/lib/python3.5/site-packages/django/core/validators.py:33
+msgid "Enter a valid value."
+msgstr ""
 
 #: venv/lib/python3.5/site-packages/django/contrib/messages/apps.py:7
 msgid "Messages"
@@ -172,10 +167,6 @@ msgstr ""
 
 #: venv/lib/python3.5/site-packages/django/contrib/syndication/apps.py:7
 msgid "Syndication"
-msgstr ""
-
-#: venv/lib/python3.5/site-packages/django/core/validators.py:33
-msgid "Enter a valid value."
 msgstr ""
 
 #: venv/lib/python3.5/site-packages/django/core/validators.py:106
@@ -539,10 +530,6 @@ msgstr ""
 #. characters will prevent the default label_suffix to be appended to the label
 #: venv/lib/python3.5/site-packages/django/forms/boundfield.py:167
 msgid ":?.!"
-msgstr ""
-
-#: venv/lib/python3.5/site-packages/django/forms/fields.py:56
-msgid "This field is required."
 msgstr ""
 
 #: venv/lib/python3.5/site-packages/django/forms/fields.py:250
@@ -1113,9 +1100,6 @@ msgid_plural "%d hours"
 msgstr[0] ""
 msgstr[1] ""
 
-
-
-
 #: venv/lib/python3.5/site-packages/django/utils/timesince.py:16
 #, python-format
 msgid "%d minute"
@@ -1126,7 +1110,6 @@ msgstr[1] "diq"
 #: venv/lib/python3.5/site-packages/django/utils/timesince.py:52
 msgid "0 minutes"
 msgstr ""
-
 
 #: venv/lib/python3.5/site-packages/django/views/csrf.py:109
 msgid "Forbidden"
@@ -1262,6 +1245,22 @@ msgstr ""
 #: venv/lib/python3.5/site-packages/modeltranslation/widgets.py:25
 msgid "None"
 msgstr ""
+
+#~ msgid "illik"
+#~ msgstr "per amount"
+
+#~ msgid ""
+#~ "Hal-hazırda, Böyük Britaniyanın ən böyük infrastruktur müəssisələrindən "
+#~ "biri ilə regional İK İş Ortağı üçün axtarış aparıram. Bu maraqlı İK "
+#~ "dəyişikliyi proqramından keçərkən təşkilatına qoşulmaq üçün inanılmaz bir "
+#~ "fürsətdir. Bu roldən London ofisindən kənara çıxacaqsınız, ancaq Böyük "
+#~ "Britaniyada müştərilərlə əməkdaşlıq edəcəksiniz ..."
+#~ msgstr ""
+#~ "I'm currently working with one of the UK's largest infrastructure "
+#~ "businesses on their search for a Regional HR Business Partner. This is an "
+#~ "amazing opportunity to join the organisation as they go through an "
+#~ "exciting HR change programme. In this role you will be based out of the "
+#~ "London office but will be partnering clients based across the UK so ..."
 
 #, fuzzy
 #~| msgid "Ana səhifə"

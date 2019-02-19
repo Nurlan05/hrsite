@@ -24,36 +24,27 @@
       <th scope="col">#</th>
       <th scope="col">Ad</th>
       <th scope="col">Soyad</th>
+      <th>Müraciət etdiyi iş</th>
+      <th>Tarix</th>
       <th scope="col">E-mail</th>
       <th scope="col">CV</th>
       <th scope="col">Cover Letter</th>
     </tr>
   </thead>
   <tbody>
+    {% for cv in cv_list %}
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>unurlan05@gmail.com</td>
-      <td><a href="/">Salam</a></td>
-      <td><a href="/">Salam</a></td>
+      <th scope="row">{{ forloop.counter }}</th>
+      <td>{{cv.name}}</td>
+      <td>{{ cv.surname }}</td>
+      <td><a target=_blank href="/job/{{cv.apply_for}}">{{ cv.apply_name }}</a></td>
+      <td>{{ cv.created_date|date:"j F Y" }}</td>
+      <td>{{cv.email}}</td>
+      <td><a class="btn btn-success" target="blank" href="{{ cv.cv.url }}"><i class="fas fa-file-download"></i></a></td>
+      <td><a class="btn btn-success" target="blank" href="{{ cv.cover_letter.url }}"><i class="fas fa-download"></i></a></td>
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>unurlan05@gmail.com</td>
-      <td><a href="/">Salam</a></td>
-      <td><a href="/">Salam</a></td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>unurlan05@gmail.com</td>
-      <td><a href="/">Salam</a></td>
-      <td><a href="/">Salam</a></td>
-    </tr>
+    {% endfor %}
+   
 
 
 

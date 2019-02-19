@@ -3,20 +3,7 @@ from ckeditor.fields import RichTextField
 from django.urls import reverse
 from allapp.helper import slugify
 from django.conf import settings
-
-
-class CvSend(models.Model):
-	name=models.CharField(max_length=1500,verbose_name="Ad")
-	surname=models.CharField(max_length=1500,verbose_name="Soyad")
-	email=models.EmailField(max_length=1500,verbose_name="Email")
-	created_date=models.DateTimeField(auto_now_add=True,null=True)
-	cv=models.FileField(verbose_name='Cv')
-	cover_letter=models.FileField(verbose_name="Məktub")
-	def __str__(self):
-		return ('%s') %(self.name + " " + self.surname)
-	class Meta:
-		verbose_name="CV"
-		verbose_name_plural="ALL CV"
+from django.utils.translation import ugettext_lazy as _
 
 class Location(models.Model):
 	city_name=models.CharField(max_length=1500,verbose_name="City Name")
@@ -128,3 +115,22 @@ class Job(models.Model):
 	  	super(Job, self).save(*args, **kwargs)
 	  	self.slug = "{}-{}".format(slugify(self.title), self.id)
 	  	super(Job, self).save(*args, **kwargs)
+
+
+
+class CvSend(models.Model):
+	name=models.CharField(max_length=1500,verbose_name="Ad")
+	surname=models.CharField(max_length=1500,verbose_name="Soyad")
+	apply_for=models.CharField(max_length=1500,verbose_name="Job slug",editable=False,null=True,blank=True)
+	apply_name=models.CharField(max_length=1500,verbose_name="Job name",editable=False,null=True,blank=True)
+
+	email=models.EmailField(max_length=1500,verbose_name="Email")
+	created_date=models.DateTimeField(auto_now_add=True,null=True)
+	cv=models.FileField(verbose_name='Cv')
+	cover_letter=models.FileField(verbose_name="Məktub")
+	def __str__(self):
+		return ('%s') %(self.name + " " + self.surname)
+	class Meta:
+		verbose_name="CV"
+		verbose_name_plural="ALL CV"
+		ordering=['-id']

@@ -58,8 +58,8 @@
 	<ul class="job-button-info">
 <!-- 		<li class="save-btn"><a href="#">{% trans "Yadda saxla" %}</a></li> -->
 
-		<li class="apply-btn"><a href="#">{% trans "Müraciət et" %}</a></li>
-		<li class="save-btn"><a href="#">{% trans "Ətraflı" %}</a></li>
+		<li class="apply-btn"><a href="{{ job.get_absolute_url }}apply">{% trans "Müraciət et" %}</a></li>
+		<li class="save-btn"><a href="{{ job.get_absolute_url }}">{% trans "Ətraflı" %}</a></li>
 	</ul>
 </div>
 	

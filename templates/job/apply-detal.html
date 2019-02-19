@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load i18n %}
+{% block body %}
+
+
+<section id="full-width-page">
+	<div class="text-image page">
+		<h1>
+  
+  			{% trans 'Müraciət et' %}
+</h1>
+
+		<h1 class="text-header"></h1>
+	</div>
+	<div class="full-screen"></div>
+</section>
+<section id="recent" >
+		<div class="container">
+			<div class="row apply-form">
+				<div class="col-md-6">
+					<div class="form-job">
+<form  method="POST" enctype="multipart/form-data">
+			{% csrf_token %}
+     		{{ form|crispy }}
+     		{{ form.media  }}
+     		<button type="submit" class="btn success">
+     			{% trans 'Müraciət et' %}
+     		</button>
+						</form>
+					</div>
+				</div>
+				<div class="col-md-6 aditional">
+				<h3 >{% trans "İş haqqında məlumat" %}</h3>
+				<div class="form-all"><p><i class="fas fa-file form-i"></i>   <a href="{{ job.get_absolute_url }}"><strong>{{ job.title }}</strong></a></p></div>
+
+				<div class="form-all">
+					<p>
+		<i class="fa fa-fw fa-folder-open form-i"></i> <strong>{% trans "Kontrakt növü" %}:</strong>
+					{{ job.job_contract_type }}</p>
+				</div>
+				<div class="form-all">
+					<p>
+						<i class="fas fa-location-arrow form-i"></i>
+						<strong>{% trans "Yer" %}:</strong>
+						{{ job.job_location.all|join:", " }}
+					</p>
+				</div>
+				<div class="form-all">
+				<p>
+					<i class="fa fa-fw fa-database form-i"></i>
+					<strong>
+						{% trans "Maaş" %}:
+					</strong>
+					{{ job.salary }}
+				</p>
+				</div>
+				<div class="form-all">
+				<p>
+					<i class="fas fa-check-circle form-i"></i>
+					<strong>
+						{% trans 'Yayımlandı' %}:
+					</strong>
+					{{ job.created_at | timesince }} {% trans 'öncə' %}
+				</p>
+				</div>
+				<div class="form-all">
+					<p>
+						<i class="fas fa-envelope-square form-i"></i>
+					<strong>
+						{% trans "Email" %}:
+					</strong>
+					{{ job.email }}
+					</p>
+				</div>
+				</div>
+			</div>
+			
+		</div>
+<div  class="space-bottom"></div>
+</section>
+{% endblock %}
