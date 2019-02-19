@@ -24,7 +24,7 @@
   			<div class="head-top">
   	{% if request.user.is_authenticated %}
   <a style="margin-right: 10px;" href="/cv-list">Cv list</a>|
-  	<a style="margin-right: 10px;" href="/admin">Admin panel</a>
+  	<a style="margin-right: 10px;" href="/hrsystem">Admin panel</a>
   	{% endif %}
     {% for lang in LANGUAGES %}
     <a href="/{{ lang.0 }}/{{ request.get_full_path|slice:"4:" }}">

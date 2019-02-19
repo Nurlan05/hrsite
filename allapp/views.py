@@ -1,6 +1,11 @@
 from django.shortcuts import render, get_object_or_404, redirect,HttpResponseRedirect
 from allapp.models import CvSend,Job,Location,Sector,JobType,ExperienceLevel,ContractType,Hours
 from allapp.form import CvSendForm
+from django.contrib import messages
+from django.utils.translation import ugettext_lazy as _
+
+
+
 def index(request):
 	context={}
 	context['last_job']=Job.objects.all()[:10]
@@ -24,6 +29,7 @@ def job_detail(request,slug):
 			cv=form.save()
 			cv.apply_for=job.slug
 			cv.save()
+			messages.success(request,_('Məlumatlarınız uğurla göndərildi!'))
 			return redirect(job.get_absolute_url())
 	else:
 		form=CvSendForm()
@@ -43,6 +49,7 @@ def job_cv_detail(request,slug):
 			cv.apply_name=job.title
 			cv.apply_for=job.slug
 			cv.save()
+			messages.success(request,_('Məlumatlarınız uğurla göndərildi!'))
 			return redirect(job.get_absolute_url())
 	else:
 		form=CvSendForm()

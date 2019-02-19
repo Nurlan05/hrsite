@@ -21,7 +21,7 @@ from django.conf.urls.i18n import i18n_patterns
 admin.site.site_header = settings.ADMIN_SITE_HEADER
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),]
+    url(r'^hrsystem/', admin.site.urls),]
 urlpatterns += i18n_patterns(
     url(r'^', include('allapp.urls')),
 )
