@@ -94,10 +94,18 @@
 				 	<a href="{% url 'allapp:contact' %}">{% trans "Əlaqə" %}</a>
 				 	</li>
 				 	<li class="col-md-3 footer-location">
-				 		<a href="mailto:info@example.com">info@example.com</a>
+				 		<a href="mailto:{% for contact in contactus %}{{ contact.email }}{% endfor %}"> 
+        {% for contact in contactus %}
+          {{contact.email}}
+          {% endfor %}
+            </a>
 				 	</li>
 				 	<li class="col-md-3 footer-tel">
-				 		<a href="tel:+994774813913">+994774813913</a>
+				 		<a href="tel:{% for contact in contactus %}{{contact.telphone}}{% endfor %} ">
+              {% for contact in contactus %}
+          {{contact.telphone}}
+                  {% endfor %}     
+            </a>
 				 	</li>
 				 </ul>
 			</div>

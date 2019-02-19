@@ -20,19 +20,31 @@
 				<div class="main-card">
 				
 				<i  class="fas fa-envelope"></i>
-				<div class="card-content">info@example.com</div>
+				<div class="card-content">
+					{% for contact in contactus %}
+					{{contact.email}}
+					{% endfor %}
+				</div>
 				</div>
 			</div>
 			<div class="col-md-4 card-contact">
 				<div class="main-card">
 					<i class="fas fa-phone"></i>
-					<div class="card-content">+99477546565656</div>
+					<div class="card-content">
+			{% for contact in contactus %}
+					{{contact.telphone}}
+			{% endfor %}
+					</div>
 				</div>
 			</div>
 			<div class="col-md-4 card-contact">
 				<div class="main-card">
 					<i class="fas fa-map-marker-alt"></i>
-					<div class="card-content">Baku,Azerbaijan</div>
+					<div class="card-content">
+			{% for contact in contactus %}
+					{{contact.location}}
+					{% endfor %}
+					</div>
 				</div>
 			</div>
 		</div>

@@ -23,6 +23,10 @@ p a{
 	transition: background 1.5s;
   	-webkit-transition: background 1.5s;
 }
+.aboutus-content {
+    margin-top: 20px;
+}
+
 #nav-id{
 	top:40px;
 }

@@ -14,12 +14,15 @@
 </section>
 <section id="main-content">
 	<div class="container">
+
+		{% for about in aboutus %}
 		<div class="aboutus-content">
-			<h1>{% trans "Haqqımızda" %}</h1>
+			<h1>{{about.a_title}}</h1>
 			<div class="aboutus-text">
-				Lorem ipsum
+				{{about.a_content|safe}}
 			</div>
 		</div>
+		{% endfor %}
 	</div>
 	<div class="space-bottom"></div>
 </section>
