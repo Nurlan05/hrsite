@@ -49,7 +49,7 @@ class HoursAdmin(admin.ModelAdmin):
 @admin.register(Job)
 class JobAdmin(admin.ModelAdmin):
 	exclude=('title','content')
-	list_display = ('title','slug')
+	list_display = ('title','draft','slug')
 	search_fields = ('title', 'content')
 @admin.register(CvSend)
 class CvSendAdmin(admin.ModelAdmin):

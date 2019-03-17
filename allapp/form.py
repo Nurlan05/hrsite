@@ -11,10 +11,11 @@ class CvSendForm(forms.ModelForm):
         }
     ))
 
-	cover_letter=forms.FileField(label=_('Tövsiyyə Məktubu'),widget=forms.FileInput(attrs={
+	cover_letter=forms.FileField(required=False,label=_('Tövsiyyə Məktubu'),widget=forms.FileInput(attrs={
         'class':'form-control-form-input',
         }
     ))
+
 	class Meta:
 		model=CvSend
 		fields=[

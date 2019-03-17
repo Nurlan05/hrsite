@@ -7,19 +7,17 @@
 <section id="full-width">
 	<div class="text-image">
 		<h1>
-  <a style="color:white" class="text-header typewrite" data-period="2000" data-type='["{% trans "Arzuladığınız işi seçin və müraciət edin!" %}" ]'>
+ <!--  <a style="color:white" class="text-header typewrite" data-period="2000" data-type='["{% trans "Arzuladığınız işi seçin və müraciət edin!" %}" ]'> -->
+  	<div class="text-header typewrite animated fadeInRight">{% trans "Arzuladığınız işi seçin və müraciət edin!" %}</div>
     <span class="wrap"></span>
   </a>
 </h1>
 
 		<h1 class="text-header"></h1>
-		<div class="just">
-			<a   href="{% url 'allapp:job_list' %}" class="get-button">
+		<div class="just animated fadeInUpBig">
+			<a   href="{% url 'allapp:job_list' %}" class="get-button ">
 			{% trans "Vakansiyalar" %}
 		</a>
-		<a  style="margin-left: 20px;" href="{% url 'allapp:contact' %}" class="get-button">
-			{% trans "Əlaqə" %}
-		</a> 
 		</div>
 		<div class="just-mobile">
 			<a href="{% url 'allapp:job_list' %}">{% trans "Vakansiyalar" %}</a>

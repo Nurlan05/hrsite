@@ -110,6 +110,9 @@ msgstr "Location"
 msgid "Növbə"
 msgstr "Hours"
 
+msgid "vakansiya axtar"
+msgstr "search for vacancy"
+
 #: templates/job/apply-detal.html:53 templates/job/job-detal.html:55
 msgid "Maaş"
 msgstr "Salary"

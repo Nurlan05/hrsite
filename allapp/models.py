@@ -130,6 +130,7 @@ class Job(models.Model):
 	expiry_date=models.DateTimeField(verbose_name="Expiry Date",null=True,blank=True)
 	email=models.CharField(max_length=1500,verbose_name="Email",null=True,blank=True)
 	content=RichTextField(verbose_name="About job")
+	draft=models.BooleanField(default=True,verbose_name="Public?",)
 	created_at = models.DateTimeField(auto_now_add=True,null=True)
 	slug=models.SlugField(editable=False,verbose_name="Slug")
 	def __str__(self):

@@ -14,7 +14,7 @@
 
 		<h1 class="text-header"></h1>
 	</div>
-	<div class="full-screen"></div>
+	<div style="background-image: url(/static/image/vac.png);" class="full-screen "></div>
 </section>
 <section id="recent" >
 		<div class="title-text">
@@ -26,6 +26,23 @@
 	</div>
 
 <div class="row col-md-12">
+	<div style="margin-bottom: 20px;" class="row col-md-12">
+		<div class="col-md-6">
+			
+		</div>
+		<div  class="col-md-6">
+			  <form style="margin-left: 15%;" method="GET" role="search" action="" class="form-inline my-2 my-lg-0">
+      <input style="margin-right: 15px;text-align: center;" value="{{ request.GET.q }}" name="q" class="form-control my-neput" type="search" placeholder="{% trans 'vakansiya axtar' %}" aria-label="Search">
+      <select style="margin-right: 20px;" class="form-control" name="location">
+      	<option value="">----</option>
+  {% for location in location_list %}
+    <option value="{{location.id}}">{{location.city_name}}</option>
+  {% endfor %}  
+</select>
+      <button style="border:none;color: white" class="apply-btn search" type="submit">Search</button>
+    </form>
+		</div>
+	</div>
 <div  class="col-md-4">
 	<div  class="col-md-12 extras">
 	<button class="collapsible"><div class="col-title"><i class="fa fa-fw fa-caret-right"></i>{% trans "Sektor" %}</div></button>
@@ -134,7 +151,7 @@ for (i = 0; i < coll.length; i++) {
 	</div>
 </div>
 <div class="col-md-8">
-{% for job in job_list %}
+{% for job in jobs %}
 		<div class="col-md-12 extras">
 		
 			<div class="job-content">

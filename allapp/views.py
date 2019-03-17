@@ -5,18 +5,19 @@ from django.contrib import messages
 from django.utils.translation import ugettext_lazy as _
 from django.db.models import Q
 from .filters import JobFilter
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 def index(request):
 	context={}
 	context['contactus']=ContactUs.objects.all()
-	context['last_job']=Job.objects.all()[:10]
+	context['last_job']=Job.objects.filter(draft=True)[:10]
 	return render(request,'home/home.html',context)
 
 
 def job_list(request):
 	context={}
 	context['contactus']=ContactUs.objects.all()
-	job_list=Job.objects.all()
+	job_list=Job.objects.filter(draft=True)
 	context['location_list']=Location.objects.all()
 	context['sector_list']=Sector.objects.all()
 	context['job_type_list']=JobType.objects.all()
@@ -25,7 +26,26 @@ def job_list(request):
 	context['contract_type_list']=ContractType.objects.all()
 	filter=JobFilter(request.GET,queryset=job_list)
 	context['filter']=filter
-	context['job_list']=Job.objects.all()
+	job_list=Job.objects.filter(draft=True)
+	query=request.GET.get('q')
+	if query:
+
+		sel_location=request.GET.get('location',None)
+		if sel_location:
+			location=get_object_or_404(Location,pk=sel_location)
+			if location:
+				context['jobs']=job_list.filter(job_location__city_name__icontains=query).distinct()
+			job_list=job_list.filter(
+				Q(title__icontains=query)
+				).distinct()
+	paginator = Paginator(job_list, 10000)
+	page = request.GET.get('page')
+	try:
+		context['jobs'] = paginator.page(page)
+	except PageNotAnInteger:
+		context['jobs'] = paginator.page(1)
+	except EmptyPage:
+		context['jobs'] = paginator.page(paginator.num_pages)
 	return render(request,'job/job-list.html',context)
 
 
@@ -67,8 +87,8 @@ def sector_view(request,slug):
 	context={}
 	context['contactus']=ContactUs.objects.all()
 	context['topic_name']=loc.sector_name
-	context['alljobs']=loc.sector.all()
-	context['job_count']=loc.sector.all().count()
+	context['alljobs']=loc.sector.filter(draft=True)
+	context['job_count']=loc.sector.filter(draft=True).count()
 	context['location_list']=Location.objects.all()
 	context['sector_list']=Sector.objects.all()
 	context['job_type_list']=JobType.objects.all()
@@ -83,8 +103,8 @@ def contract_view(request,slug):
 	context={}
 	context['contactus']=ContactUs.objects.all()
 	context['topic_name']=loc.contract_name
-	context['alljobs']=loc.contracttype.all()
-	context['job_count']=loc.contracttype.all().count()
+	context['alljobs']=loc.contracttype.filter(draft=True)
+	context['job_count']=loc.contracttype.filter(draft=True).count()
 	context['location_list']=Location.objects.all()
 	context['sector_list']=Sector.objects.all()
 	context['job_type_list']=JobType.objects.all()
@@ -99,8 +119,8 @@ def hours_view(request,slug):
 	context={}
 	context['contactus']=ContactUs.objects.all()
 	context['topic_name']=loc.hours_name
-	context['alljobs']=loc.hours.all()
-	context['job_count']=loc.hours.all().count()
+	context['alljobs']=loc.hours.filter(draft=True)
+	context['job_count']=loc.hours.filter(draft=True).count()
 	context['location_list']=Location.objects.all()
 	context['sector_list']=Sector.objects.all()
 	context['job_type_list']=JobType.objects.all()
@@ -115,8 +135,8 @@ def experience_view(request,slug):
 	context={}
 	context['contactus']=ContactUs.objects.all()
 	context['topic_name']=loc.experience_name
-	context['alljobs']=loc.experiencelevel.all()
-	context['job_count']=loc.experiencelevel.all().count()
+	context['alljobs']=loc.experiencelevel.filter(draft=True)
+	context['job_count']=loc.experiencelevel.filter(draft=True).count()
 	context['location_list']=Location.objects.all()
 	context['sector_list']=Sector.objects.all()
 	context['job_type_list']=JobType.objects.all()
@@ -129,7 +149,7 @@ def job_detail(request,slug):
 	job=get_object_or_404(Job,slug=slug)
 	context={}
 	context['contactus']=ContactUs.objects.all()
-	context['job_list']=Job.objects.all().exclude(pk=job.id)[:3]
+	context['job_list']=Job.objects.filter(draft=True).exclude(pk=job.id)[:3]
 	context['job']=job
 	if request.method=='POST':
 		form=CvSendForm(request.POST,request.FILES or None)
@@ -150,7 +170,7 @@ def job_cv_detail(request,slug):
 	job=get_object_or_404(Job,slug=slug)
 	context={}
 	context['contactus']=ContactUs.objects.all()
-	context['job_list']=Job.objects.all().exclude(pk=job.id)[:3]
+	context['job_list']=Job.objects.filter(draft=True).exclude(pk=job.id)[:3]
 	context['job']=job
 	if request.method=='POST':
 		form=CvSendForm(request.POST,request.FILES or None)
