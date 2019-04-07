@@ -9,16 +9,16 @@ body,html{
 	outline: none !important;
 }
 .form-i{
-	color:green;
+	color:#2837ba;
 }
 p a{
-	color:rgba(225,127,1,0.8) !important;
+	color:rgb(12, 179, 198) !important;
 }
 .form-control-form-input{
 	padding: 0;
 }
 .custom-nav{
-	background: #fff6  !important;
+	background: #fff0 !important;
 	padding: 1rem 1rem !important;
 	transition: background 1.5s;
   	-webkit-transition: background 1.5s;
@@ -37,12 +37,27 @@ p a{
     -moz-box-shadow: 0 20px 20px rgba(0,0,0,.1);
     -webkit-box-shadow: 0 20px 20px rgba(0,0,0,.1);
 }
+.navbar-brand {
+font-family: 'Anton', sans-serif;
+    color: white !important;
+
+}
+.footer-logo{
+font-family: 'Anton', sans-serif;
+    color: white !important;
+
+}
+.nav-link {
+    font-size: 15px;
+    font-weight: bold;
+    color: white !important;
+}
 
 #nav-id{
 	top:40px;
 }
 .custom-nav-scroll{
-	background: white !important;
+	background: #2837ba !important;
 	top:0px !important;
 	box-shadow: 2px 2px #a790904d;
 }
@@ -52,13 +67,12 @@ p a{
 }
 .apply-btn:hover {
 
-    background: rgba(19, 87, 52, 0.64);
+    background: rgba(40, 55, 186, 0.66);
     cursor: pointer;
 
 }
 .save-btn:hover {
-
-    background: rgba(225, 127, 1, 0.59);
+    background: rgba(12, 179, 198, 0.49);
     cursor: pointer;
 }
 
@@ -191,7 +205,6 @@ div#footer {
 	margin-top: 5px;
 }
 .footer-location {
-    border-right: 1px solid;
     text-align: center;
 }
 .footer-tel{
@@ -209,7 +222,7 @@ div#footer {
 }
 
 .btn.success {
-    background: rgb(19, 86, 51);
+    background: rgb(40, 55, 186);
     color: white;
 }
 
@@ -220,19 +233,19 @@ div#footer {
 }
 .apply-btn-content {
     padding: 10px;
-    background: rgba(225,127,1,0.8);
-    border-color: rgba(225,127,1,0.8);
+    background: rgb(12, 179, 198);
+    border-color: rgb(12, 179, 198);
 }
 .apply-btn-content:hover{
-	background:rgba(225, 127, 1, 0.59);
+	background:rgba(12, 179, 198, 0.49);
 }
 .latest-content{
 	color:white;
 	text-align: center;
 	margin-top: 10px;
     padding: 10px;
-    background: rgb(19, 86, 51);
-    border-color: rgb(19, 86, 51);
+    background: rgb(40, 55, 186);
+    border-color: rgb(40, 55, 186);
 }
 
 .sidebar-latest-job {
@@ -249,11 +262,10 @@ div#footer {
     position: absolute;
     bottom: 0;
     width: 100%;
-    background: rgb(19, 87, 52);
+    background: rgb(40, 55, 186);
 }
-.job-title a{
-
-    color: rgba(19,87,52,0.8);
+.job-title a {
+    color: rgb(40, 55, 186);
 }
 .job-info {
 
@@ -284,16 +296,14 @@ div#footer {
 }
 
 .save-btn {
-	padding:5px;
-    background: rgba(225,127,1,0.8);
-    border-color: rgba(225,127,1,0.8);
-
+    padding: 5px;
+    background: rgb(12, 179, 198);
+    border-color: rgb(12, 179, 198);
 }
-.apply-btn{
-
-	padding:5px 20px;
-    background: rgba(19,87,52,0.8);
-    border-color: rgba(19,87,52,0.8);
+.apply-btn {
+    padding: 5px 20px;
+    background: #2837ba;
+    border-color: rgb(40, 55, 186);
 }
 .apply-form{
 	padding: 30px;
@@ -373,31 +383,30 @@ position: relative;
 .just-mobile{
 	display: none;
 }
-.just a{
-	color: white;
-
-	padding: 20px 80px;
-
-	border: 2px solid;
-
-	border-top-left-radius: 5px;
-
-	border-top-right-radius: 5px;
-
-	border-bottom-right-radius: 5px;
-
-	border-bottom-left-radius: 5px;
-	text-decoration: none;
-	font-style: bold;
-}
-.just a{
+.just a {
+    color: white;
+    padding: 20px 80px;
+    border: 2px solid;
+        border-top-color: currentcolor;
+        border-right-color: currentcolor;
+        border-bottom-color: currentcolor;
+        border-left-color: currentcolor;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    text-decoration: none;
+    font-style: bold;
+    background: #2837ba;
+    border-color: #2837ba;
 	text-decoration: none !important;
 	font-weight: bold;
 	font-size: 20px;
 }
+
 .just a:hover{
 	background: white;
-	color:green;
+	color:#2837ba;
 	border-color: white;
 }
 .full-screen{
@@ -407,7 +416,27 @@ background-position: center;
 background-repeat: no-repeat;
 background-size: cover;
 }
-
+.contact-full-screen{
+background-image: url("/static/image/contact.png");
+height: 100%;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+}
+.aboutus-full-screen{
+background-image: url("/static/image/aboutus.png");
+height: 100%;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+}
+.apply-full-screen{
+background-image: url("/static/image/apply.png");
+height: 100%;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+}
 @media (max-width: 992px){	
 	.footer ul{
 		margin-bottom: 0 !important;

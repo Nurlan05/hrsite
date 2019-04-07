@@ -1,0 +1,6 @@
+top header legv eliyir
+header nav reng full transparent hover de reng deyishimi
+goy calarlari ve ag
+anton fontunu istifade edirik
+elaqeni qaytariq,yazini deyisheceyik.vakansiyalar buttonda reng deyishimi edirik
+footere de parallax email ve contact form

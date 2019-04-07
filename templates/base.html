@@ -7,7 +7,9 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Amiko|Andika|Anton|Arimo|Asap|Basic|Cabin|Cabin+Condensed|Cantora+One|Didact+Gothic|Fira+Sans|Fira+Sans+Condensed|Fira+Sans+Extra+Condensed|Francois+One|Jaldi|Kanit|Libre+Franklin|Maven+Pro|Mitr|Montserrat|Montserrat+Alternates|Muli|News+Cycle|Noto+Sans|Nunito|Nunito+Sans|Oswald|Pattaya|Prompt|Quicksand|Raleway|Roboto+Condensed|Sansita|Source+Sans+Pro|Varela+Round" rel="stylesheet"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous">
@@ -25,31 +27,25 @@
 <div class="all-body">
 
   	{% csrf_token %}
+    {% if request.user.is_superuser %}
   	<div class="rown col-md-12 top-nav">
   		<div class="container">
   			
   			<div class="head-top">
-  	{% if request.user.is_authenticated %}
+  	
   <a style="margin-right: 10px;" href="/cv-list">Cv list</a>|
   	<a style="margin-right: 10px;" href="/hrsystem">Admin panel</a>
-  	{% endif %}
-    {% for lang in LANGUAGES %}
-    <a href="/{{ lang.0 }}/{{ request.get_full_path|slice:"4:" }}">
-    {% if lang.0 == "az" %}
-    <img src="/static/image/aze.png">
-    {% elif lang.0 == "en" %}
-    | <img src="/static/image/en.png">
-    {% endif %}
-  </a>
-    {% endfor %}
+  	
+    
 
   	
   			</div></div>
   		</div>
+      {% endif %}
   
 <nav id="nav-id" class="navbar fixed-top custom-nav navbar-expand-lg navbar-light bg-light">
 	<div class="container">
-  <a class="navbar-brand" href="{% url 'allapp:index' %}">Company Logo</a>
+  <a class="navbar-brand" href="{% url 'allapp:index' %}">Executive Recruitment Republic Group</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -70,6 +66,15 @@
       <li class="nav-item">
         <a class="nav-link" href="{% url 'allapp:contact' %}">{% trans "Əlaqə" %}</a>
       </li>
+      {% for lang in LANGUAGES %}
+    <a class="nav-link" href="/{{ lang.0 }}/{{ request.get_full_path|slice:"4:" }}">
+    {% if lang.0 == "az" %}
+    <img src="/static/image/aze.png">
+    {% elif lang.0 == "en" %}
+    <img src="/static/image/en.png">
+    {% endif %}
+  </a>
+    {% endfor %}
       </ul>
 
   </div>
@@ -85,29 +90,29 @@
 		<div class="container">
 			<div class="footer">
 				 <ul class="job-info ul-footer">
-				 	<li class="col-md-3" >
-				 		<a href="{% url 'allapp:index' %}">Company Logo</a>
+				 	<li class="col-md-4 footer-logo" >
+				 		<a href="{% url 'allapp:index' %}">Executive Recruitment Republic Group</a>
 				 	</li>
-				 	<li class="col-md-3 footer-location">
+				 	<li class="col-md-4 footer-location">
 				 	<a href="{% url 'allapp:index' %}">{% trans "Ana səhifə" %}</a> <br>
 				 	<a href="{% url 'allapp:job_list' %}">{% trans "Vakansiyalar" %}</a> <br>
 				 	<a href="{% url 'allapp:aboutus' %}">{% trans "Haqqımızda" %}</a> <br>
 				 	<a href="{% url 'allapp:contact' %}">{% trans "Əlaqə" %}</a>
 				 	</li>
-				 	<li class="col-md-3 footer-location">
+				 	<li class="col-md-4 footer-location">
 				 		<a href="mailto:{% for contact in contactus %}{{ contact.email }}{% endfor %}"> 
         {% for contact in contactus %}
           {{contact.email}}
           {% endfor %}
             </a>
-				 	</li>
+				 	</li><!-- 
 				 	<li class="col-md-3 footer-tel">
 				 		<a href="tel:{% for contact in contactus %}{{contact.telphone}}{% endfor %} ">
               {% for contact in contactus %}
           {{contact.telphone}}
                   {% endfor %}     
             </a>
-				 	</li>
+				 	</li> -->
 				 </ul>
 			</div>
 		</div>
