@@ -1,0 +1,20 @@
+/* Custom Styles */
+body {
+font-family: 'Nunito Sans', sans-serif;
+}
+.filterlist {
+max-height: 7rem;
+overflow-y: auto;
+}
+#hero-img {
+	background-image: url(../img/hero.jpg);
+	background-position: center center;
+	background-size: cover;
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+#collapseFilter {
+display: block !important;
+}
+}

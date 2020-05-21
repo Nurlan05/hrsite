@@ -1,31 +1,30 @@
 {% extends 'base.html' %}
 {% load i18n %}
 {% block body %}
-<section id="full-width-page">
-	<div class="text-image page">
-		<h1>
-  
-  			{% trans "Haqqımızda" %}
-</h1>
-
-		<h1 class="text-header"></h1>
-	</div>
-	<div class="aboutus-full-screen"></div>
-</section>
-<section id="main-content">
-	<div class="container">
-
-		{% for about in aboutus %}
-		<div class="aboutus-content">
-			<h1>{{about.a_title}}</h1>
-			<div class="aboutus-text">
-				{{about.a_content|safe}}
-			</div>
-		</div>
-		{% endfor %}
-	</div>
-	<div class="space-bottom"></div>
-</section>
+ <!-- Body -->
+    <div class="container pt-6">
+      <h2 class="text-primary mb-5">{%  trans 'About Us' %}</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <h4 class="text-primary">Heading</h4>
+        </div>
+        <div class="col-md-8 mb-5">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis recusandae voluptatum officia quidem praesentium earum quasi consectetur dolorem similique reiciendis, molestias doloremque, cupiditate voluptas ipsam veniam consequuntur, soluta magni velit quis. Quia et voluptate saepe recusandae eveniet quibusdam odit natus unde ullam, quo, delectus minus exercitationem eius voluptatem, nemo nostrum.
+        </div>
+        <div class="col-md-4">
+          <h4 class="text-primary">Heading</h4>
+        </div>
+        <div class="col-md-8 mb-5">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis laboriosam, alias nihil non libero adipisci a ullam ea, provident soluta cupiditate ut officiis ratione praesentium blanditiis nesciunt nostrum repudiandae reprehenderit? Doloribus adipisci facilis minima delectus doloremque aliquam ex molestias suscipit perferendis recusandae, nisi error rem excepturi, cumque tenetur, veritatis dolorum.
+        </div>
+        <div class="col-md-4">
+          <h4 class="text-primary">Heading</h4>
+        </div>
+        <div class="col-md-8 mb-5">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores aliquam, nesciunt commodi facere accusamus, quo quas reprehenderit, ea iure amet odio voluptates quidem, eos blanditiis ducimus voluptatum a sed. Quibusdam exercitationem tempora veniam voluptatum cumque deleniti, non ullam recusandae in! Aspernatur rem libero quam tempora eum quia nobis accusantium, enim!
+        </div>
+      </div>
+    </div>
 
 
 

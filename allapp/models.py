@@ -119,11 +119,11 @@ class Hours(models.Model):
 
 class Job(models.Model):
 	job_location=models.ManyToManyField(Location,related_name='location',verbose_name="Job location",)
-	job_sector=models.ForeignKey(Sector,related_name='sector',verbose_name="Job sector",null=True,)
-	job_type=models.ForeignKey(JobType,related_name='jobtype',verbose_name="Job Type",null=True,)
-	job_contract_type=models.ForeignKey(ContractType,related_name='contracttype',verbose_name="Contract Type",null=True,)
-	job_experience_level=models.ForeignKey(ExperienceLevel,related_name='experiencelevel',verbose_name="Experience Level",null=True,)
-	job_hours=models.ForeignKey(Hours,related_name='hours',verbose_name="Hours",null=True,)
+	job_sector=models.ForeignKey(Sector,related_name='sector',verbose_name="Job sector",null=True,on_delete=models.CASCADE)
+	job_type=models.ForeignKey(JobType,related_name='jobtype',verbose_name="Job Type",null=True,on_delete=models.CASCADE)
+	job_contract_type=models.ForeignKey(ContractType,related_name='contracttype',verbose_name="Contract Type",null=True,on_delete=models.CASCADE)
+	job_experience_level=models.ForeignKey(ExperienceLevel,related_name='experiencelevel',verbose_name="Experience Level",null=True,on_delete=models.CASCADE)
+	job_hours=models.ForeignKey(Hours,related_name='hours',verbose_name="Hours",null=True,on_delete=models.CASCADE)
 
 	title=models.CharField(max_length=1500,verbose_name="Job name",)
 	salary=models.CharField(max_length=1500,verbose_name="Salary",null=True,blank=True)

@@ -1,124 +1,122 @@
 {% load static %}
 {% load i18n %}
 {% get_available_languages as LANGUAGES %}
+{% get_current_language as LANGUAGE_CODE %}
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="{% static 'style/style.css' %}">
+    <!-- Icon font CSS -->
+    <link rel="stylesheet" href="{% static 'style/iconfont.css' %}">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Executive Recruitment Republic Group</title>
+</head>
+<body>
+<!-- Header -->
+<nav class="navbar navbar-dark bg-primary navbar-expand-lg">
+    <div class="container py-2">
+        <a class="navbar-brand" href="#">
+            <img src="/static/img/logo.png" height="38px" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menuMobile">
+            <span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse justify-content-end" id="menuMobile">
+            <ul class="navbar-nav mt-4 mt-lg-0">
+                <li class="nav-item ml-lg-4">
+                    <a class="nav-link active" href="{% url 'allapp:index' %}">{% trans 'Home' %}</a>
+                </li>
+                <li class="nav-item ml-lg-4">
+                    <a class="nav-link" href="{% url 'allapp:job_list' %}">{% trans 'Vacancies' %}</a>
+                </li>
+                <li class="nav-item ml-lg-4">
+                    <a class="nav-link" href="{% url 'allapp:aboutus' %}">{% trans 'About Us' %}</a>
+                </li>
+                <li class="nav-item ml-lg-4">
+                    <a class="nav-link" href="{% url 'allapp:contact' %}">{% trans 'Contact Us' %}</a>
+                </li>
+                <!-- Language -->
+                <li class="nav-item ml-lg-4 dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="language" data-toggle="dropdown">
+                        <span class="icon-lang mr-2"></span>
+                        {% if LANGUAGE_CODE == "az" %}
+                            Az
+                        {% elif LANGUAGE_CODE == "en" %}
+                            En
+                        {% endif %}
+                    </a>
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Amiko|Andika|Anton|Arimo|Asap|Basic|Cabin|Cabin+Condensed|Cantora+One|Didact+Gothic|Fira+Sans|Fira+Sans+Condensed|Fira+Sans+Extra+Condensed|Francois+One|Jaldi|Kanit|Libre+Franklin|Maven+Pro|Mitr|Montserrat|Montserrat+Alternates|Muli|News+Cycle|Noto+Sans|Nunito|Nunito+Sans|Oswald|Pattaya|Prompt|Quicksand|Raleway|Roboto+Condensed|Sansita|Source+Sans+Pro|Varela+Round" rel="stylesheet"> 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}?{% now "U" %}">
-    <script type="text/javascript" src="{% static 'js/custom.js' %}"></script>
-    <title>{% trans "İş vakansiyaları" %}</title>
-    <meta name="yandex-verification" content="10255651fb5f9b7e" />
-      <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/js/bootstrap.min.js" integrity="sha384-7aThvCh9TypR7fIc2HV4O/nFMVCBwyIUKL8XCtKE+8xgCgl/PQGuFsvShjr74PBp" crossorigin="anonymous"></script>
-  </head>
-  <body>
-<div class="all-body">
-
-  	{% csrf_token %}
-    {% if request.user.is_superuser %}
-  	<div class="rown col-md-12 top-nav">
-  		<div class="container">
-  			
-  			<div class="head-top">
-  	
-  <a style="margin-right: 10px;" href="/cv-list">Cv list</a>|
-  	<a style="margin-right: 10px;" href="/hrsystem">Admin panel</a>
-  	
-    
-
-  	
-  			</div></div>
-  		</div>
-      {% endif %}
-  
-<nav id="nav-id" class="navbar fixed-top custom-nav navbar-expand-lg navbar-light bg-light">
-	<div class="container">
-  <a class="navbar-brand" href="{% url 'allapp:index' %}">Executive Recruitment Republic Group</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="{% url 'allapp:index' %}">{% trans "Ana səhifə" %}<span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{% url 'allapp:job_list' %}">{% trans "Vakansiyalar" %}</a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" href="{% url 'allapp:aboutus' %}">{% trans "Haqqımızda" %}</a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" href="{% url 'allapp:contact' %}">{% trans "Əlaqə" %}</a>
-      </li>
-      {% for lang in LANGUAGES %}
-    <a class="nav-link" href="/{{ lang.0 }}/{{ request.get_full_path|slice:"4:" }}">
-    {% if lang.0 == "az" %}
-    <img src="/static/image/aze.png">
-    {% elif lang.0 == "en" %}
-    <img src="/static/image/en.png">
-    {% endif %}
-  </a>
-    {% endfor %}
-      </ul>
-
-  </div>
-</div>
+                    <div class="dropdown-menu dropdown-menu-right" id="language">
+                        {% for lang in LANGUAGES %}
+                            <a class="dropdown-item" href="/{{ lang.0 }}/{{ request.get_full_path|slice:"4:" }}">
+                                {% if  lang.0 == "az" %}
+                                    Azərbaycan
+                                {% elif  lang.0 == "en" %}
+                                    English
+                                {% endif %}
+                            </a>
+                        {% endfor %}
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
 </nav>
-
-
 {% block body %}
+
 {% endblock %}
-
-<section id="footer-bottom">
-	<div align="center" class="col-md-12">
-		<div class="container">
-			<div class="footer">
-				 <ul class="job-info ul-footer">
-				 	<li class="col-md-4 footer-logo" >
-				 		<a href="{% url 'allapp:index' %}">Executive Recruitment Republic Group</a>
-				 	</li>
-				 	<li class="col-md-4 footer-location">
-				 	<a href="{% url 'allapp:index' %}">{% trans "Ana səhifə" %}</a> <br>
-				 	<a href="{% url 'allapp:job_list' %}">{% trans "Vakansiyalar" %}</a> <br>
-				 	<a href="{% url 'allapp:aboutus' %}">{% trans "Haqqımızda" %}</a> <br>
-				 	<a href="{% url 'allapp:contact' %}">{% trans "Əlaqə" %}</a>
-				 	</li>
-				 	<li class="col-md-4 footer-location">
-				 		<a href="mailto:{% for contact in contactus %}{{ contact.email }}{% endfor %}"> 
-        {% for contact in contactus %}
-          {{contact.email}}
-          {% endfor %}
+<!-- Footer -->
+<div class="footer bg-primary text-light mt-6 py-5">
+    <div class="container">
+        <div class="d-flex justify-content-lg-between flex-lg-row flex-column">
+            <a class="mb-3" href="#">
+                <img src="/static/img/logo.png" height="38px" alt="">
             </a>
-				 	</li><!-- 
-				 	<li class="col-md-3 footer-tel">
-				 		<a href="tel:{% for contact in contactus %}{{contact.telphone}}{% endfor %} ">
-              {% for contact in contactus %}
-          {{contact.telphone}}
-                  {% endfor %}     
-            </a>
-				 	</li> -->
-				 </ul>
-			</div>
-		</div>
-
-</section>
+            <div class="d-flex flex-md-row flex-column my-4 my-lg-0">
+                <a class="text-white mr-4 mb-3" href="{% url 'allapp:index' %}">{% trans 'Home' %}</a>
+                <a class="text-white mr-4 mb-3" href="{% url 'allapp:job_list' %}">{% trans 'Vacancies' %}</a>
+                <a class="text-white mr-4 mb-3" href="{% url 'allapp:aboutus' %}">{% trans 'About Us' %}</a>
+                <a class="text-white mr-4 mb-3" href="{% url 'allapp:contact' %}">{% trans 'Contact Us' %}</a>
+                <!-- Language -->
+                <a class="dropdown dropdown-toggle text-white" href="#" id="language" data-toggle="dropdown">
+                    <span class="icon-lang mr-2"></span>
+                    {% if LANGUAGE_CODE == "az" %}
+                        Az
+                    {% elif LANGUAGE_CODE == "en" %}
+                        En
+                    {% endif %}
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" id="language">
+                    {% for lang in LANGUAGES %}
+                        <a class="dropdown-item" href="/{{ lang.0 }}/{{ request.get_full_path|slice:"4:" }}">
+                            {% if  lang.0 == "az" %}
+                                Azərbaycan
+                            {% elif  lang.0 == "en" %}
+                                English
+                            {% endif %}
+                        </a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <hr class="my-3">
+        <p class="small mt-4 mb-0">© 2020 {% trans 'Executive Recruitment Republic Group. All Rights Reserved' %}.</p>
+    </div>
 </div>
-  
-  </body>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
 </html>

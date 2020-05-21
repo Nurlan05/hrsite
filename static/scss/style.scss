@@ -1,0 +1,33 @@
+/* Variables Overwrite */
+$h1-font-size:                1rem * 4 !default;
+$h2-font-size:                1rem * 2.5 !default;
+$h5-font-size:                1rem * 1.125 !default;
+$h6-font-size:                1rem * .75 !default;
+$headings-font-weight:        700 !default;
+
+$enable-responsive-font-sizes:                true !default;
+
+$input-btn-padding-y:         .5rem !default;
+$btn-padding-x:               1.5rem !default;
+
+$link-hover-decoration:       none !default;
+
+$spacers: (
+  "6": 5.625rem,
+  "7": 6.5rem
+);
+
+$primary: #252966 !default;
+$secondary: #F04A58 !default;
+$info: #266EB9 !default;
+$gray-800: #575A66 !default;
+$gray-900: #24262D !default;
+$gray-100: #F8F8F8 !default;
+
+$input-bg:                            $gray-100 !default;
+$input-focus-bg:                      white !default;
+$input-border-color:                  $gray-100 !default;
+$custom-control-indicator-checked-bg: $info !default;
+
+@import "bootstrap/bootstrap.scss";
+@import "base.scss";

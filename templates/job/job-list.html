@@ -3,191 +3,210 @@
 {% load crispy_forms_tags %}
 
 {% block body %}
-
-
-<section id="full-width-page">
-	<div class="text-image page">
-		<h1>
-  
-  			{% trans "Vakansiyalar" %}
-</h1>
-
-		<h1 class="text-header"></h1>
-	</div>
-	<div style="background-image: url(/static/image/vac.png);" class="full-screen "></div>
-</section>
-<section id="recent" >
-		<div class="title-text">
-	
-
-
-
-
-	</div>
-
-<div class="row col-md-12">
-	<div style="margin-bottom: 20px;" class="row col-md-12">
-		<div class="col-md-6">
-			
-		</div>
-		<div  class="col-md-6">
-			  <form style="margin-left: 15%;" method="GET" role="search" action="" class="form-inline my-2 my-lg-0">
-      <input style="margin-right: 15px;text-align: center;" value="{{ request.GET.q }}" name="q" class="form-control my-neput" type="search" placeholder="{% trans 'vakansiya axtar' %}" aria-label="Search">
-      <select style="margin-right: 20px;" class="form-control" name="location">
-      	<option value="">----</option>
-  {% for location in location_list %}
-    <option value="{{location.id}}">{{location.city_name}}</option>
-  {% endfor %}  
-</select>
-      <button style="border:none;color: white" class="apply-btn search" type="submit">Search</button>
-    </form>
-		</div>
-	</div>
-<div  class="col-md-4">
-	<div  class="col-md-12 extras">
-	<button class="collapsible"><div class="col-title"><i class="fa fa-fw fa-caret-right"></i>{% trans "Sektor" %}</div></button>
-<div class="content">
-	{% for sector in sector_list %}
-<a class="sub-link" href="/sektor/{{sector.slug}}">
-	 <div class="sub-content">
-		{{ sector.sector_name }}
- 	</div>
- </a>
- {% endfor %}
- 
-</div>
-
-
-<button class="collapsible"><div class="col-title"><i class="fa fa-fw fa-caret-right"></i>{% trans "İş növü" %}</div></button>
-<div class="content">
-	{% for jobtype in job_type_list %}
-<a class="sub-link" href="/is-novu/{{ jobtype.slug }}">
-	 <div class="sub-content">
-		{{jobtype.job_name}}
- 	</div>
- </a>
- {% endfor %}
- 
-</div>
-
-<button class="collapsible"><div class="col-title"><i class="fa fa-fw fa-caret-right"></i>{% trans "Kontrakt növü" %}</div></button>
-<div class="content">
-	{% for contract in contract_type_list %}
-<a class="sub-link" href="/kontrakt/{{ contract.slug }}">
-	 <div class="sub-content">
-		{{contract.contract_name}}
- 	</div>
- </a>
- {% endfor %}
-</div>
-
-<button class="collapsible"><div class="col-title"><i class="fa fa-fw fa-caret-right"></i>{% trans "Növbə" %}</div></button>
-<div class="content">
-	{% for hours in hours_list  %}
-<a class="sub-link" href="/novbe/{{ hours.slug }}">
-	 <div class="sub-content">
-		{{hours.hours_name}}
- 	</div>
- </a>
- {% endfor %}
-</div>
-
-<button id="btn" class="collapsible"><div class="col-title">
-<i class="fa fa-fw fa-caret-right"></i>{% trans "İş təcrübəsi" %}</div></button>
-<div class="content">
-	{% for expert in experience_level_list %}
-<a class="sub-link" href="/tecrube/{{ expert.slug }}">
-	 <div class="sub-content">
-		{{expert.experience_name}}
- 	</div>
- </a>
- 
- {% endfor %}
-</div>
-
-<button class="collapsible"><div class="col-title"><i class="fa fa-fw fa-caret-right"></i>{% trans "Yer" %}</div></button>
-<div class="content">
-{% for loc in location_list %}
-<a class="sub-link" href="/yer/{{loc.slug }}">
-	 <div class="sub-content">
-		{{ loc.city_name }}
- 	</div>
- </a>
-{% endfor %}
- 
-</div>
-
-
-
-
-<script type="text/javascript">
-	$('button').click(function(){
-$(this).toggleClass('down');
-});
-</script>
-<script>
-var coll = document.getElementsByClassName("collapsible");
-var i;
-
-for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var content = this.nextElementSibling;
-    if (content.style.maxHeight){
-      content.style.maxHeight = null;
-    } else {
-      content.style.maxHeight = content.scrollHeight + "px";
-    }
-  });
-}
-
-
-</script>
-
-
-
-
-
-	</div>
-</div>
-<div class="col-md-8">
-{% for job in jobs %}
-		<div class="col-md-12 extras">
-		
-			<div class="job-content">
-				<div class="job-title">
-					<a href="{{ job.get_absolute_url}}">{{ job.title }}</a>
-				</div>
-				<ul class="job-info">
-<li class="results-job-location">{{ job.job_location.all|join:", " }}</li>   
-{% if job.salary %}
-<li class="results-salary">{{ job.salary }}</li>
-{% endif %}
-<li class="results-posted-at">{{ job.created_at | timesince }} {% trans 'öncə' %} </li>
-</ul>
-<div class="job-sub-detail">
-{{ job.content|safe|slice:":200" }} ...
-
-</div>
-<div class="job-button">
-	<ul class="job-button-info">
-		
-		<li class="apply-btn"><a href="{{ job.get_absolute_url }}apply">{% trans "Müraciət et" %}</a></li>
-		<li class="save-btn"><a href="{{job.get_absolute_url}}">{% trans "Ətraflı" %}</a></li>
-	</ul>
-</div>
-	
-		</div>
-		
-	</div>
-
-{% endfor %}
-</div>
-</div>
-
-
-
-
-<div class="space-bottom"></div>
-</section>
+<!-- Title -->
+    <div class="jumbotron jumbotron-fluid bg-info">
+      <div class="container text-white">
+        <h2>{% trans 'Vacancies' %}</h2>
+      </div>
+    </div>
+    <!-- Breadcrumb -->
+    <!-- Body -->
+    <div class="container pt-5">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="container border rounded p-4 mb-5">
+            <h5 class="mb-4">{% trans 'Filter Results' %}</h5>
+            <div class="d-flex">
+              <input class="form-control" type="search" placeholder="Search for vacancies">
+              <button class="btn btn-light d-lg-none px-2 ml-2" type="button" data-toggle="collapse" data-target="#collapseFilter">
+              <span class="icon-menu px-1"></span>
+              </button>
+            </div>
+            <!-- Filter -->
+            <div class="navbar-expand-lg">
+              <div class="navbar-collapse collapse mt-4" id="collapseFilter">
+                <!-- Sector -->
+                <a class="clearfix" data-toggle="collapse" href="#filterSector">
+                  <h5 class="float-left">Sector</h5>
+                  <h5 class="float-right dropdown-toggle"></h5>
+                </a>
+                <div class="collapse show filterlist" id="filterSector">
+                  <div class="custom-control custom-checkbox mt-1">
+                    <input type="checkbox" class="custom-control-input" id="sectorCheck1">
+                    <label class="custom-control-label" for="sectorCheck1">Oil</label>
+                  </div>
+                  <div class="custom-control custom-checkbox mt-1">
+                    <input type="checkbox" class="custom-control-input" id="sectorCheck2">
+                    <label class="custom-control-label" for="sectorCheck2">Construction</label>
+                  </div>
+                  <div class="custom-control custom-checkbox mt-1">
+                    <input type="checkbox" class="custom-control-input" id="sectorCheck3">
+                    <label class="custom-control-label" for="sectorCheck3">Technology</label>
+                  </div>
+                  <div class="custom-control custom-checkbox mt-1">
+                    <input type="checkbox" class="custom-control-input" id="sectorCheck4">
+                    <label class="custom-control-label" for="sectorCheck4">Finance</label>
+                  </div>
+                  <div class="custom-control custom-checkbox mt-1">
+                    <input type="checkbox" class="custom-control-input" id="sectorCheck5">
+                    <label class="custom-control-label" for="sectorCheck5">Education</label>
+                  </div>
+                  <div class="custom-control custom-checkbox mt-1">
+                    <input type="checkbox" class="custom-control-input" id="sectorCheck6">
+                    <label class="custom-control-label" for="sectorCheck6">Industry</label>
+                  </div>
+                </div>
+                <hr class="mt-2">
+                <!-- Job Type -->
+                <a class="clearfix" data-toggle="collapse" href="#filterJobtype">
+                  <h5 class="float-left">Job Type</h5>
+                  <h5 class="float-right dropdown-toggle"></h5>
+                </a>
+                <div class="collapse show" id="filterJobtype">
+                  <div class="custom-control custom-checkbox mt-1">
+                    <input type="checkbox" class="custom-control-input" id="sectorCheck1">
+                    <label class="custom-control-label" for="sectorCheck1">Oil</label>
+                  </div>
+                  <div class="custom-control custom-checkbox mt-1">
+                    <input type="checkbox" class="custom-control-input" id="sectorCheck2">
+                    <label class="custom-control-label" for="sectorCheck2">Construction</label>
+                  </div>
+                  <div class="custom-control custom-checkbox mt-1">
+                    <input type="checkbox" class="custom-control-input" id="sectorCheck3">
+                    <label class="custom-control-label" for="sectorCheck3">Technology</label>
+                  </div>
+                </div>
+                <hr class="mt-2">
+                <!-- Experience -->
+                <a class="clearfix" data-toggle="collapse" href="#filterLevel">
+                  <h5 class="float-left">Sector</h5>
+                  <h5 class="float-right dropdown-toggle"></h5>
+                </a>
+                <div class="collapse show" id="filterLevel">
+                  <div class="custom-control custom-checkbox mt-1">
+                    <input type="checkbox" class="custom-control-input" id="sectorCheck1">
+                    <label class="custom-control-label" for="sectorCheck1">Oil</label>
+                  </div>
+                  <div class="custom-control custom-checkbox mt-1">
+                    <input type="checkbox" class="custom-control-input" id="sectorCheck2">
+                    <label class="custom-control-label" for="sectorCheck2">Construction</label>
+                  </div>
+                  <div class="custom-control custom-checkbox mt-1">
+                    <input type="checkbox" class="custom-control-input" id="sectorCheck3">
+                    <label class="custom-control-label" for="sectorCheck3">Technology</label>
+                  </div>
+                </div>
+                <hr class="mt-2">
+                <!-- Reset -->
+                <button type="button" class="btn btn-dark btn-sm">{% trans 'Reset Filters' %}</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- List -->
+        <div class="col-lg-8">
+          <h5 class="mb-4"><span class="text-secondary">24</span> {% trans 'Vacancies Found' %}</h5>
+          <!-- Job box -->
+          <div class="container border rounded p-4 mb-4">
+            <div class="d-flex justify-content-md-between flex-column-reverse flex-md-row mb-2">
+              <h4 class="">HR Manager</h4>
+              <small class="text-dark">12 April 2020</small>
+            </div>
+            <div class="d-flex flex-wrap mb-2">
+              <div class="mr-4"><span class="icon-map text-dark mr-2"></span>Baku</div>
+              <div class="mr-4"><span class="icon-salary text-dark mr-2"></span>1.000</div>
+              <div class="mr-4"><span class="icon-sector text-dark mr-2"></span>Oil</div>
+              <div class="mr-4"><span class="icon-contract text-dark mr-2"></span>Temporary</div>
+            </div>
+            <p class="text-dark">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices augue nunc lobortis nulla aliquam justo, consectetur. Diam vel orci tincidunt interdum blandit ultricies.</p>
+            <a href="#" class="btn btn-info btn-sm mr-2" role="button">{% trans 'Read More' %}</a>
+            <button type="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#jobApply">{% trans 'Apply Now' %}</button>
+          </div>
+          <!-- Job box -->
+          <div class="container border rounded p-4 mb-4">
+            <div class="d-flex justify-content-md-between flex-column-reverse flex-md-row mb-2">
+              <h4 class="">HR Manager</h4>
+              <small class="text-dark">12 April 2020</small>
+            </div>
+            <div class="d-flex flex-wrap mb-2">
+              <div class="mr-4"><span class="icon-map text-dark mr-2"></span>Baku</div>
+              <div class="mr-4"><span class="icon-salary text-dark mr-2"></span>1.000</div>
+              <div class="mr-4"><span class="icon-sector text-dark mr-2"></span>Oil</div>
+              <div class="mr-4"><span class="icon-contract text-dark mr-2"></span>Temporary</div>
+            </div>
+            <p class="text-dark">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices augue nunc lobortis nulla aliquam justo, consectetur. Diam vel orci tincidunt interdum blandit ultricies.</p>
+            <a href="#" class="btn btn-info btn-sm mr-2" role="button">{% trans 'Read More' %}</a>
+            <button type="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#jobApply">{% trans 'Apply Now' %}</button>
+          </div>
+          <!-- Job box -->
+          <div class="container border rounded p-4 mb-4">
+            <div class="d-flex justify-content-md-between flex-column-reverse flex-md-row mb-2">
+              <h4 class="">HR Manager</h4>
+              <small class="text-dark">12 April 2020</small>
+            </div>
+            <div class="d-flex flex-wrap mb-2">
+              <div class="mr-4"><span class="icon-map text-dark mr-2"></span>Baku</div>
+              <div class="mr-4"><span class="icon-salary text-dark mr-2"></span>1.000</div>
+              <div class="mr-4"><span class="icon-sector text-dark mr-2"></span>Oil</div>
+              <div class="mr-4"><span class="icon-contract text-dark mr-2"></span>Temporary</div>
+            </div>
+            <p class="text-dark">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices augue nunc lobortis nulla aliquam justo, consectetur. Diam vel orci tincidunt interdum blandit ultricies.</p>
+            <a href="#" class="btn btn-info btn-sm mr-2" role="button">{% trans 'Read More' %}</a>
+            <button type="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#jobApply">{% trans 'Apply Now' %}</button>
+          </div>
+          <nav>
+            <ul class="pagination justify-content-end">
+              <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+              <li class="page-item"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <!-- Apply Form -->
+    <div class="modal fade" id="jobApply" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">HR Manager</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label>{% trans 'Full Name' %}</label>
+                <input type="text" class="form-control" id="applicantName">
+              </div>
+              <div class="form-group">
+                <label>{% trans 'E-mail Address' %}</label>
+                <input type="email" class="form-control" id="applicantMail">
+              </div>
+              <div class="form-group">
+                <label>CV</label>
+                <div class="custom-file">
+                  <input type="file" class="custom-file-input" id="applicantCV">
+                  <label class="custom-file-label">{% trans 'Choose file' %}</label>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>{% trans 'Cover Letter' %} <span class="text-dark">({% trans 'Optional' %})</span></label>
+                <div class="custom-file">
+                  <input type="file" class="custom-file-input" id="applicantLetter">
+                  <label class="custom-file-label">{% trans 'Choose file' %}</label>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-light" data-dismiss="modal">{% trans 'Close' %}</button>
+            <button type="button" class="btn btn-secondary">{% trans 'Apply Now' %}</button>
+          </div>
+        </div>
+      </div>
+    </div>
 {% endblock %}

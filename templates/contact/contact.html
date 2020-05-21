@@ -2,56 +2,43 @@
 {% load i18n %}
 {% block body %}
 
-<section id="full-width-page">
-	<div class="text-image page">
-		<h1>
-  
-  			{% trans "Bizimlə Əlaqə" %}
-</h1>
-
-		<h1 class="text-header"></h1>
-	</div>
-	<div class="contact-full-screen"></div>
-</section>
-<section id="content-contact">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-4 card-contact">
-				<div class="main-card">
-				
-				<i  class="fas fa-envelope"></i>
-				<div class="card-content">
-					{% for contact in contactus %}
-					{{contact.email}}
-					{% endfor %}
-				</div>
-				</div>
-			</div>
-			<div class="col-md-4 card-contact">
-				<div class="main-card">
-					<i class="fas fa-phone"></i>
-					<div class="card-content">
-			{% for contact in contactus %}
-					{{contact.telphone}}
-			{% endfor %}
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4 card-contact">
-				<div class="main-card">
-					<i class="fas fa-map-marker-alt"></i>
-					<div class="card-content">
-			{% for contact in contactus %}
-					{{contact.location}}
-					{% endfor %}
-					</div>
-				</div>
-			</div>
-
-
-		</div>
-	</div>
-	<div class="space-bottom"></div>
-</section>
-
+    <!-- Body -->
+    <div class="container pt-6">
+        <h2 class="text-primary mb-5">{% trans 'Contact Us' %}</h2>
+        <div class="row">
+            <!-- Contact Info -->
+            <div class="col-md-5 mb-5">
+                <p class="mb-5">{% trans 'You may contact us at the following numbers or e-mail address so that we can assist you.' %}</p>
+                <hr class="my-4">
+                <small class="text-dark">{% trans 'PHONE NUMBER' %}</small>
+                <p>+994 55 444 33 22</p>
+                <hr class="my-4">
+                <small class="text-dark">{% trans 'EMAIL ADDRESS' %}</small>
+                <p>info@yourdomain.com</p>
+                <hr class="my-4">
+            </div>
+            <!-- Contact Form -->
+            <div class="col-md-6 offset-md-1">
+                <form>
+                    <div class="form-group">
+                        <label>{% trans 'Full name' %}</label>
+                        <input type="text" class="form-control" id="contactName">
+                    </div>
+                    <div class="form-group">
+                        <label>{% trans 'E-mail address' %}</label>
+                        <input type="email" class="form-control" id="contactMail">
+                    </div>
+                    <div class="form-group">
+                        <label>{% trans 'Subject' %}</label>
+                        <input type="text" class="form-control" id="contactSubject">
+                    </div>
+                    <div class="form-group">
+                        <label>{% trans 'Your Message' %}</label>
+                        <textarea class="form-control" id="contactMessage" rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-secondary btn-block">{% trans 'Send Message' %}</button>
+                </form>
+            </div>
+        </div>
+    </div>
 {% endblock %}

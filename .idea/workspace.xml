@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3440e64c-a2a7-4f1f-9391-f28272a85f67" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/allapp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/allapp/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hrsystem/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/hrsystem/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/locale/az/LC_MESSAGES/django.mo" beforeDir="false" afterPath="$PROJECT_DIR$/locale/az/LC_MESSAGES/django.mo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/locale/az/LC_MESSAGES/django.po" beforeDir="false" afterPath="$PROJECT_DIR$/locale/az/LC_MESSAGES/django.po" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/locale/en/LC_MESSAGES/django.mo" beforeDir="false" afterPath="$PROJECT_DIR$/locale/en/LC_MESSAGES/django.mo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/locale/en/LC_MESSAGES/django.po" beforeDir="false" afterPath="$PROJECT_DIR$/locale/en/LC_MESSAGES/django.po" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/image/aboutus.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/image/apply.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/image/aze.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/image/contact.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/image/en.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/image/jobsearch.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/image/vac.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/image/vacancy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/aboutus/aboutus.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/aboutus/aboutus.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/contact/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/contact/contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/job/apply-detal.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/job/apply-detal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/job/contract-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/job/contract-list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/job/cv-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/job/cv-list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/job/experience-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/job/experience-list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/job/hours-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/job/hours-list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/job/job-detal.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/job/job-detal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/job/job-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/job/job-list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/job/jobtype-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/job/jobtype-list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/job/location-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/job/location-list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/job/sector-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/job/sector-list.html" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1cEdgqKWvEba5baXOsfBq4QpKND" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="hrsite" type="Python.DjangoServer" factoryName="Django server">
+      <module name="hrsite" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3440e64c-a2a7-4f1f-9391-f28272a85f67" name="Default Changelist" comment="" />
+      <created>1590097800271</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1590097800271</updated>
+      <workItem from="1590097801492" duration="6271000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
