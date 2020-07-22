@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-22 18:25+0400\n"
+"POT-Creation-Date: 2020-07-22 19:12+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -43,17 +43,17 @@ msgstr "Your details successfully sent"
 msgid "About Us"
 msgstr "Haqqımızda"
 
-#: templates/base.html:31 templates/base.html:80
+#: templates/base.html:31 templates/base.html:80 templates/job/job-detal.html:8
 msgid "Home"
 msgstr "Ana səhifə"
 
-#: templates/base.html:34 templates/base.html:81 templates/home/home.html:12
-#: templates/job/job-list.html:9
+#: templates/base.html:34 templates/base.html:81 templates/home/home.html:13
+#: templates/job/job-detal.html:9 templates/job/job-list.html:9
 msgid "Vacancies"
 msgstr "Vakansiyalar"
 
 #: templates/base.html:40 templates/base.html:83
-#: templates/contact/contact.html:7 templates/home/home.html:13
+#: templates/contact/contact.html:7 templates/home/home.html:14
 msgid "Contact Us"
 msgstr "Əlaqə"
 
@@ -101,13 +101,78 @@ msgstr "Göndər"
 msgid "Choose your dream job and apply!"
 msgstr "Xəyalınızdakı işi seçin və müraciət edin"
 
-#: templates/home/home.html:20
+#: templates/home/home.html:21 templates/job/job-detal.html:62
 msgid "Latest Posted Jobs"
 msgstr "Ən son vakansiyalar"
 
-#: templates/home/home.html:41
+#: templates/home/home.html:38 templates/job/job-list.html:122
+#: templates/job/job-list.html:138 templates/job/job-list.html:154
+msgid "Read More"
+msgstr "Ətraflı"
+
+#: templates/home/home.html:44
 msgid "View all Vacancies"
 msgstr "Bütün vakansiyalar"
+
+#: templates/job/job-detal.html:23
+msgid "SECTOR"
+msgstr "Sektor"
+
+#: templates/job/job-detal.html:27
+msgid "SALARY"
+msgstr "Maaş"
+
+#: templates/job/job-detal.html:31
+msgid "CONTRACT"
+msgstr "Müqavilə"
+
+#: templates/job/job-detal.html:35
+msgid "LOCATION"
+msgstr "Yer"
+
+#: templates/job/job-detal.html:43
+msgid "EXPIRY DATE"
+msgstr "Son müraciət tarixi"
+
+#: templates/job/job-detal.html:47
+msgid "EMAIL"
+msgstr "Email"
+
+#: templates/job/job-detal.html:53
+msgid "Job Description"
+msgstr "Vakansiya haqqında"
+
+#: templates/job/job-detal.html:57 templates/job/job-detal.html:61
+#: templates/job/job-detal.html:105 templates/job/job-list.html:123
+#: templates/job/job-list.html:139 templates/job/job-list.html:155
+#: templates/job/job-list.html:207
+msgid "Apply Now"
+msgstr "İndi Müraciət Et"
+
+#: templates/job/job-detal.html:80 templates/job/job-list.html:182
+msgid "Full Name"
+msgstr "Ad Soyad"
+
+#: templates/job/job-detal.html:84 templates/job/job-list.html:186
+msgid "E-mail Address"
+msgstr "Email ünvanı"
+
+#: templates/job/job-detal.html:91 templates/job/job-detal.html:98
+#: templates/job/job-list.html:193 templates/job/job-list.html:200
+msgid "Choose file"
+msgstr "Faylı seçin"
+
+#: templates/job/job-detal.html:95 templates/job/job-list.html:197
+msgid "Cover Letter"
+msgstr "Müşaiyət Məktubu"
+
+#: templates/job/job-detal.html:95 templates/job/job-list.html:197
+msgid "Optional"
+msgstr "İstəyə bağlı"
+
+#: templates/job/job-detal.html:104 templates/job/job-list.html:206
+msgid "Close"
+msgstr "Bağla"
 
 #: templates/job/job-list.html:18
 msgid "Filter Results"
@@ -125,16 +190,6 @@ msgstr "Təmizlə"
 msgid "Vacancies Found"
 msgstr "Vakansiya Tapıldı"
 
-#: templates/job/job-list.html:122 templates/job/job-list.html:138
-#: templates/job/job-list.html:154
-msgid "Read More"
-msgstr "Ətraflı"
-
-#: templates/job/job-list.html:123 templates/job/job-list.html:139
-#: templates/job/job-list.html:155 templates/job/job-list.html:207
-msgid "Apply Now"
-msgstr "İndi Müraciət Et"
-
 #: templates/job/job-list.html:159
 msgid "Previous"
 msgstr ""
@@ -142,30 +197,6 @@ msgstr ""
 #: templates/job/job-list.html:163
 msgid "Next"
 msgstr ""
-
-#: templates/job/job-list.html:182
-msgid "Full Name"
-msgstr "Ad Soyad"
-
-#: templates/job/job-list.html:186
-msgid "E-mail Address"
-msgstr "Email ünvanı"
-
-#: templates/job/job-list.html:193 templates/job/job-list.html:200
-msgid "Choose file"
-msgstr "Faylı seçin"
-
-#: templates/job/job-list.html:197
-msgid "Cover Letter"
-msgstr "Müşaiyət Məktubu"
-
-#: templates/job/job-list.html:197
-msgid "Optional"
-msgstr "İstəyə bağlı"
-
-#: templates/job/job-list.html:206
-msgid "Close"
-msgstr "Bağla"
 
 #: venv/lib/python3.6/site-packages/crispy_forms/tests/test_form_helper.py:134
 #: venv/lib/python3.6/site-packages/crispy_forms/tests/test_form_helper.py:144

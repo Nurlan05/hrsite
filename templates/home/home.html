@@ -3,43 +3,46 @@
 {% block body %}
 
 
-<!-- Hero -->
-<div class="jumbotron jumbotron-fluid" id="hero-img">
-    <div class="container py-6">
-        <div class="row">
-            <div class="col-lg-8 col-12 py-5">
-                <h1 class="text-white mb-5">{% trans 'Choose your dream job and apply!' %}</h1>
-                <a class="btn btn-secondary mr-3" href="{% url 'allapp:job_list' %}" role="button">{% trans 'Vacancies' %}</a>
-                <a class="btn btn-info" href="{% url 'allapp:contact' %}" role="button">{% trans 'Contact Us' %}</a>
+    <!-- Hero -->
+    <div class="jumbotron jumbotron-fluid" id="hero-img">
+        <div class="container py-6">
+            <div class="row">
+                <div class="col-lg-8 col-12 py-5">
+                    <h1 class="text-white mb-5">{% trans 'Choose your dream job and apply!' %}</h1>
+                    <a class="btn btn-secondary mr-3" href="{% url 'allapp:job_list' %}"
+                       role="button">{% trans 'Vacancies' %}</a>
+                    <a class="btn btn-info" href="{% url 'allapp:contact' %}" role="button">{% trans 'Contact Us' %}</a>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<!-- Body -->
-<div class="container pt-5">
-    <h2 class="text-primary mb-5">{% trans 'Latest Posted Jobs' %}</h2>
-    <div class="row">
-        <!-- Job box -->
-    <!--     <div class="col-md-4 mb-4">
-            <div class="container border rounded p-4">
-                <small class="text-dark">12 April 2020</small>
-                <h4 class="">HR Manager</h4>
-                <ul class="list-inline mt-3">
-                    <li class="list-inline-item mr-3">
-                        <span class="icon-map text-dark mr-2"></span>Baku
-                    </li>
-                    <li class="list-inline-item mr-3">
-                        <span class="icon-sector text-dark mr-2"></span>Oil
-                    </li>
-                </ul>
-                <p class="text-dark mt-2">Sed ultrices augue nunc lobortis nulla aliquam justo, consectetur.</p>
-                <a href="job-details.html" class="btn btn-info btn-sm">Read More</a>
-            </div>
-        </div> -->
+    <!-- Body -->
+    <div class="container pt-5">
+        <h2 class="text-primary mb-5">{% trans 'Latest Posted Jobs' %}</h2>
+        <div class="row">
+            <!-- Job box -->
+            {% for obj in last_job %}
+                <div class="col-md-4 mb-4">
+                    <div class="container border rounded p-4">
+                        <small class="text-dark">son tarix : {{ obj.expiry_date | date:"j F Y" }}</small>
+                        <h4 class="">{{ obj.title }}</h4>
+                        <ul class="list-inline mt-3">
+                            <li class="list-inline-item mr-3">
+                                <span class="icon-map text-dark mr-2"></span>{{obj.job_location}}
+                            </li>
+                            <li class="list-inline-item mr-3">
+                                <span class="icon-sector text-dark mr-2"></span>{{ obj.job_sector }}
+                            </li>
+                        </ul>
+                        <p class="text-dark mt-2">{{ obj.content|slice:":256"|safe }}</p>
+                        <a href="{{ obj.get_absolute_url }}" class="btn btn-info btn-sm">{% trans 'Read More' %}</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="text-center mt-4">
+            <a href="{% url 'allapp:job_list' %}" class="btn btn-secondary">{% trans 'View all Vacancies' %}</a>
+        </div>
     </div>
-    <div class="text-center mt-4">
-        <a href="{% url 'allapp:job_list' %}" class="btn btn-secondary">{% trans 'View all Vacancies' %}</a>
-    </div>
-</div>
 
 {% endblock %}

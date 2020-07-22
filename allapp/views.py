@@ -10,7 +10,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 def index(request):
 	context={}
 	context['contactus']=ContactUs.objects.all()
-	context['last_job']=Job.objects.filter(draft=True)[:10]
+	context['last_job']=Job.objects.filter(draft=True)[:12]
 	return render(request,'home/home.html',context)
 
 
@@ -150,7 +150,7 @@ def job_detail(request,slug):
 	context={}
 	context['contactus']=ContactUs.objects.all()
 	context['job_list']=Job.objects.filter(draft=True).exclude(pk=job.id)[:3]
-	context['job']=job
+	context['obj']=job
 	if request.method=='POST':
 		form=CvSendForm(request.POST,request.FILES or None)
 
