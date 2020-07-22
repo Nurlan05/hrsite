@@ -14,13 +14,13 @@
     <link rel="stylesheet" href="{% static 'style/iconfont.css' %}">
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-    <title>Executive Recruitment Republic Group</title>
+    <title>Applied Management Solutions</title>
 </head>
 <body>
 <!-- Header -->
 <nav class="navbar navbar-dark bg-primary navbar-expand-lg">
     <div class="container py-2">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="{% url 'allapp:index' %}">
             <img src="/static/img/logo.png" height="38px" alt="">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menuMobile">
@@ -104,7 +104,7 @@
             </div>
         </div>
         <hr class="my-3">
-        <p class="small mt-4 mb-0">© 2020 {% trans 'Executive Recruitment Republic Group. All Rights Reserved' %}.</p>
+        <p class="small mt-4 mb-0">© 2020 {% trans 'Applied Management Solutions. All Rights Reserved' %}.</p>
     </div>
 </div>
 <!-- Optional JavaScript -->

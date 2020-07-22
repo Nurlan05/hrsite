@@ -27,7 +27,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
 
-ADMIN_SITE_HEADER = "Hrsystem administrasiyası"
+ADMIN_SITE_HEADER = "AMS administrasiyası"
 
 # Application definition
 
