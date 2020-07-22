@@ -192,11 +192,11 @@ msgstr "Vakansiya Tapıldı"
 
 #: templates/job/job-list.html:159
 msgid "Previous"
-msgstr ""
+msgstr "Əvvəlki"
 
 #: templates/job/job-list.html:163
 msgid "Next"
-msgstr ""
+msgstr "Növbəti"
 
 #: venv/lib/python3.6/site-packages/crispy_forms/tests/test_form_helper.py:134
 #: venv/lib/python3.6/site-packages/crispy_forms/tests/test_form_helper.py:144

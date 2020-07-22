@@ -3,210 +3,186 @@
 {% load crispy_forms_tags %}
 
 {% block body %}
-<!-- Title -->
+    <!-- Title -->
     <div class="jumbotron jumbotron-fluid bg-info">
-      <div class="container text-white">
-        <h2>{% trans 'Vacancies' %}</h2>
-      </div>
+        <div class="container text-white">
+            <h2>{% trans 'Vacancies' %}</h2>
+        </div>
     </div>
     <!-- Breadcrumb -->
     <!-- Body -->
     <div class="container pt-5">
-      <div class="row">
-        <div class="col-lg-4">
-          <div class="container border rounded p-4 mb-5">
-            <h5 class="mb-4">{% trans 'Filter Results' %}</h5>
-            <div class="d-flex">
-              <input class="form-control" type="search" placeholder="{% trans 'Search for vacancies' %}">
-              <button class="btn btn-light d-lg-none px-2 ml-2" type="button" data-toggle="collapse" data-target="#collapseFilter">
-              <span class="icon-menu px-1"></span>
-              </button>
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="container border rounded p-4 mb-5">
+                    <h5 class="mb-4">{% trans 'Filter Results' %}</h5>
+                    <div class="d-flex">
+                        <input class="form-control" type="search" placeholder="{% trans 'Search for vacancies' %}">
+                        <button class="btn btn-light d-lg-none px-2 ml-2" type="button" data-toggle="collapse"
+                                data-target="#collapseFilter">
+                            <span class="icon-menu px-1"></span>
+                        </button>
+                    </div>
+                    <!-- Filter -->
+                    <div class="navbar-expand-lg">
+                        <div class="navbar-collapse collapse mt-4" id="collapseFilter">
+                            <!-- Sector -->
+                            <a class="clearfix" data-toggle="collapse" href="#filterSector">
+                                <h5 class="float-left">Sector</h5>
+                                <h5 class="float-right dropdown-toggle"></h5>
+                            </a>
+                            <div class="collapse show filterlist" id="filterSector">
+                                <div class="custom-control custom-checkbox mt-1">
+                                    <input type="checkbox" class="custom-control-input" id="sectorCheck1">
+                                    <label class="custom-control-label" for="sectorCheck1">Oil</label>
+                                </div>
+                                <div class="custom-control custom-checkbox mt-1">
+                                    <input type="checkbox" class="custom-control-input" id="sectorCheck2">
+                                    <label class="custom-control-label" for="sectorCheck2">Construction</label>
+                                </div>
+                                <div class="custom-control custom-checkbox mt-1">
+                                    <input type="checkbox" class="custom-control-input" id="sectorCheck3">
+                                    <label class="custom-control-label" for="sectorCheck3">Technology</label>
+                                </div>
+                                <div class="custom-control custom-checkbox mt-1">
+                                    <input type="checkbox" class="custom-control-input" id="sectorCheck4">
+                                    <label class="custom-control-label" for="sectorCheck4">Finance</label>
+                                </div>
+                                <div class="custom-control custom-checkbox mt-1">
+                                    <input type="checkbox" class="custom-control-input" id="sectorCheck5">
+                                    <label class="custom-control-label" for="sectorCheck5">Education</label>
+                                </div>
+                                <div class="custom-control custom-checkbox mt-1">
+                                    <input type="checkbox" class="custom-control-input" id="sectorCheck6">
+                                    <label class="custom-control-label" for="sectorCheck6">Industry</label>
+                                </div>
+                            </div>
+                            <hr class="mt-2">
+                            <!-- Job Type -->
+                            <a class="clearfix" data-toggle="collapse" href="#filterJobtype">
+                                <h5 class="float-left">Job Type</h5>
+                                <h5 class="float-right dropdown-toggle"></h5>
+                            </a>
+                            <div class="collapse show" id="filterJobtype">
+                                <div class="custom-control custom-checkbox mt-1">
+                                    <input type="checkbox" class="custom-control-input" id="sectorCheck1">
+                                    <label class="custom-control-label" for="sectorCheck1">Oil</label>
+                                </div>
+                                <div class="custom-control custom-checkbox mt-1">
+                                    <input type="checkbox" class="custom-control-input" id="sectorCheck2">
+                                    <label class="custom-control-label" for="sectorCheck2">Construction</label>
+                                </div>
+                                <div class="custom-control custom-checkbox mt-1">
+                                    <input type="checkbox" class="custom-control-input" id="sectorCheck3">
+                                    <label class="custom-control-label" for="sectorCheck3">Technology</label>
+                                </div>
+                            </div>
+                            <hr class="mt-2">
+                            <!-- Experience -->
+                            <a class="clearfix" data-toggle="collapse" href="#filterLevel">
+                                <h5 class="float-left">Sector</h5>
+                                <h5 class="float-right dropdown-toggle"></h5>
+                            </a>
+                            <div class="collapse show" id="filterLevel">
+                                <div class="custom-control custom-checkbox mt-1">
+                                    <input type="checkbox" class="custom-control-input" id="sectorCheck1">
+                                    <label class="custom-control-label" for="sectorCheck1">Oil</label>
+                                </div>
+                                <div class="custom-control custom-checkbox mt-1">
+                                    <input type="checkbox" class="custom-control-input" id="sectorCheck2">
+                                    <label class="custom-control-label" for="sectorCheck2">Construction</label>
+                                </div>
+                                <div class="custom-control custom-checkbox mt-1">
+                                    <input type="checkbox" class="custom-control-input" id="sectorCheck3">
+                                    <label class="custom-control-label" for="sectorCheck3">Technology</label>
+                                </div>
+                            </div>
+                            <hr class="mt-2">
+                            <!-- Reset -->
+                            <button type="button" class="btn btn-dark btn-sm">{% trans 'Reset Filters' %}</button>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <!-- Filter -->
-            <div class="navbar-expand-lg">
-              <div class="navbar-collapse collapse mt-4" id="collapseFilter">
-                <!-- Sector -->
-                <a class="clearfix" data-toggle="collapse" href="#filterSector">
-                  <h5 class="float-left">Sector</h5>
-                  <h5 class="float-right dropdown-toggle"></h5>
-                </a>
-                <div class="collapse show filterlist" id="filterSector">
-                  <div class="custom-control custom-checkbox mt-1">
-                    <input type="checkbox" class="custom-control-input" id="sectorCheck1">
-                    <label class="custom-control-label" for="sectorCheck1">Oil</label>
-                  </div>
-                  <div class="custom-control custom-checkbox mt-1">
-                    <input type="checkbox" class="custom-control-input" id="sectorCheck2">
-                    <label class="custom-control-label" for="sectorCheck2">Construction</label>
-                  </div>
-                  <div class="custom-control custom-checkbox mt-1">
-                    <input type="checkbox" class="custom-control-input" id="sectorCheck3">
-                    <label class="custom-control-label" for="sectorCheck3">Technology</label>
-                  </div>
-                  <div class="custom-control custom-checkbox mt-1">
-                    <input type="checkbox" class="custom-control-input" id="sectorCheck4">
-                    <label class="custom-control-label" for="sectorCheck4">Finance</label>
-                  </div>
-                  <div class="custom-control custom-checkbox mt-1">
-                    <input type="checkbox" class="custom-control-input" id="sectorCheck5">
-                    <label class="custom-control-label" for="sectorCheck5">Education</label>
-                  </div>
-                  <div class="custom-control custom-checkbox mt-1">
-                    <input type="checkbox" class="custom-control-input" id="sectorCheck6">
-                    <label class="custom-control-label" for="sectorCheck6">Industry</label>
-                  </div>
-                </div>
-                <hr class="mt-2">
-                <!-- Job Type -->
-                <a class="clearfix" data-toggle="collapse" href="#filterJobtype">
-                  <h5 class="float-left">Job Type</h5>
-                  <h5 class="float-right dropdown-toggle"></h5>
-                </a>
-                <div class="collapse show" id="filterJobtype">
-                  <div class="custom-control custom-checkbox mt-1">
-                    <input type="checkbox" class="custom-control-input" id="sectorCheck1">
-                    <label class="custom-control-label" for="sectorCheck1">Oil</label>
-                  </div>
-                  <div class="custom-control custom-checkbox mt-1">
-                    <input type="checkbox" class="custom-control-input" id="sectorCheck2">
-                    <label class="custom-control-label" for="sectorCheck2">Construction</label>
-                  </div>
-                  <div class="custom-control custom-checkbox mt-1">
-                    <input type="checkbox" class="custom-control-input" id="sectorCheck3">
-                    <label class="custom-control-label" for="sectorCheck3">Technology</label>
-                  </div>
-                </div>
-                <hr class="mt-2">
-                <!-- Experience -->
-                <a class="clearfix" data-toggle="collapse" href="#filterLevel">
-                  <h5 class="float-left">Sector</h5>
-                  <h5 class="float-right dropdown-toggle"></h5>
-                </a>
-                <div class="collapse show" id="filterLevel">
-                  <div class="custom-control custom-checkbox mt-1">
-                    <input type="checkbox" class="custom-control-input" id="sectorCheck1">
-                    <label class="custom-control-label" for="sectorCheck1">Oil</label>
-                  </div>
-                  <div class="custom-control custom-checkbox mt-1">
-                    <input type="checkbox" class="custom-control-input" id="sectorCheck2">
-                    <label class="custom-control-label" for="sectorCheck2">Construction</label>
-                  </div>
-                  <div class="custom-control custom-checkbox mt-1">
-                    <input type="checkbox" class="custom-control-input" id="sectorCheck3">
-                    <label class="custom-control-label" for="sectorCheck3">Technology</label>
-                  </div>
-                </div>
-                <hr class="mt-2">
-                <!-- Reset -->
-                <button type="button" class="btn btn-dark btn-sm">{% trans 'Reset Filters' %}</button>
-              </div>
+            <!-- List -->
+            <div class="col-lg-8">
+                {#          <h5 class="mb-4"><span class="text-secondary">24</span> {% trans 'Vacancies Found' %}</h5>#}
+                <!-- Job box -->
+                {% for obj in jobs %}
+                    <div class="container border rounded p-4 mb-4">
+                        <div class="d-flex justify-content-md-between flex-column-reverse flex-md-row mb-2">
+                            <h4 class="">{{ obj.title }}</h4>
+                            <small class="text-dark">son tarix : {{ obj.expiry_date | date:"j F Y" }}</small>
+                        </div>
+                        <div class="d-flex flex-wrap mb-2">
+                            <div class="mr-4"><span class="icon-map text-dark mr-2"></span>
+                                {% for objct in obj.job_location.all %} {{ objct.city_name }}, {% endfor %}</div>
+                            <div class="mr-4"><span class="icon-salary text-dark mr-2"></span>{{ obj.salary }}</div>
+                            <div class="mr-4"><span class="icon-sector text-dark mr-2"></span>{{ obj.job_sector }}</div>
+                            <div class="mr-4"><span class="icon-contract text-dark mr-2"></span>{{obj.job_contract_type}}</div>
+                        </div>
+                        <p class="text-dark">{{ obj.content | safe|slice:":150" }}</p>
+                        <a href="#" class="btn btn-info btn-sm mr-2" role="button">{% trans 'Read More' %}</a>
+                        <button type="button" class="btn btn-secondary btn-sm" data-toggle="modal"
+                                data-target="#jobApply">{% trans 'Apply Now' %}</button>
+                    </div>
+                {% endfor %}
+
+
+                <nav>
+                    <ul class="pagination justify-content-end">
+                        <li class="page-item disabled"><a class="page-link" href="#">{% trans 'Previous' %}</a></li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">{% trans 'Next' %}</a></li>
+                    </ul>
+                </nav>
             </div>
-          </div>
         </div>
-        <!-- List -->
-        <div class="col-lg-8">
-          <h5 class="mb-4"><span class="text-secondary">24</span> {% trans 'Vacancies Found' %}</h5>
-          <!-- Job box -->
-          <div class="container border rounded p-4 mb-4">
-            <div class="d-flex justify-content-md-between flex-column-reverse flex-md-row mb-2">
-              <h4 class="">HR Manager</h4>
-              <small class="text-dark">12 April 2020</small>
-            </div>
-            <div class="d-flex flex-wrap mb-2">
-              <div class="mr-4"><span class="icon-map text-dark mr-2"></span>Baku</div>
-              <div class="mr-4"><span class="icon-salary text-dark mr-2"></span>1.000</div>
-              <div class="mr-4"><span class="icon-sector text-dark mr-2"></span>Oil</div>
-              <div class="mr-4"><span class="icon-contract text-dark mr-2"></span>Temporary</div>
-            </div>
-            <p class="text-dark">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices augue nunc lobortis nulla aliquam justo, consectetur. Diam vel orci tincidunt interdum blandit ultricies.</p>
-            <a href="#" class="btn btn-info btn-sm mr-2" role="button">{% trans 'Read More' %}</a>
-            <button type="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#jobApply">{% trans 'Apply Now' %}</button>
-          </div>
-          <!-- Job box -->
-          <div class="container border rounded p-4 mb-4">
-            <div class="d-flex justify-content-md-between flex-column-reverse flex-md-row mb-2">
-              <h4 class="">HR Manager</h4>
-              <small class="text-dark">12 April 2020</small>
-            </div>
-            <div class="d-flex flex-wrap mb-2">
-              <div class="mr-4"><span class="icon-map text-dark mr-2"></span>Baku</div>
-              <div class="mr-4"><span class="icon-salary text-dark mr-2"></span>1.000</div>
-              <div class="mr-4"><span class="icon-sector text-dark mr-2"></span>Oil</div>
-              <div class="mr-4"><span class="icon-contract text-dark mr-2"></span>Temporary</div>
-            </div>
-            <p class="text-dark">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices augue nunc lobortis nulla aliquam justo, consectetur. Diam vel orci tincidunt interdum blandit ultricies.</p>
-            <a href="#" class="btn btn-info btn-sm mr-2" role="button">{% trans 'Read More' %}</a>
-            <button type="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#jobApply">{% trans 'Apply Now' %}</button>
-          </div>
-          <!-- Job box -->
-          <div class="container border rounded p-4 mb-4">
-            <div class="d-flex justify-content-md-between flex-column-reverse flex-md-row mb-2">
-              <h4 class="">HR Manager</h4>
-              <small class="text-dark">12 April 2020</small>
-            </div>
-            <div class="d-flex flex-wrap mb-2">
-              <div class="mr-4"><span class="icon-map text-dark mr-2"></span>Baku</div>
-              <div class="mr-4"><span class="icon-salary text-dark mr-2"></span>1.000</div>
-              <div class="mr-4"><span class="icon-sector text-dark mr-2"></span>Oil</div>
-              <div class="mr-4"><span class="icon-contract text-dark mr-2"></span>Temporary</div>
-            </div>
-            <p class="text-dark">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices augue nunc lobortis nulla aliquam justo, consectetur. Diam vel orci tincidunt interdum blandit ultricies.</p>
-            <a href="#" class="btn btn-info btn-sm mr-2" role="button">{% trans 'Read More' %}</a>
-            <button type="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#jobApply">{% trans 'Apply Now' %}</button>
-          </div>
-          <nav>
-            <ul class="pagination justify-content-end">
-              <li class="page-item disabled"><a class="page-link" href="#">{% trans 'Previous' %}</a></li>
-              <li class="page-item"><a class="page-link" href="#">1</a></li>
-              <li class="page-item"><a class="page-link" href="#">2</a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
-              <li class="page-item"><a class="page-link" href="#">{% trans 'Next' %}</a></li>
-            </ul>
-          </nav>
-        </div>
-      </div>
     </div>
     <!-- Apply Form -->
     <div class="modal fade" id="jobApply" tabindex="-1" role="dialog">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">HR Manager</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <form>
-              <div class="form-group">
-                <label>{% trans 'Full Name' %}</label>
-                <input type="text" class="form-control" id="applicantName">
-              </div>
-              <div class="form-group">
-                <label>{% trans 'E-mail Address' %}</label>
-                <input type="email" class="form-control" id="applicantMail">
-              </div>
-              <div class="form-group">
-                <label>CV</label>
-                <div class="custom-file">
-                  <input type="file" class="custom-file-input" id="applicantCV">
-                  <label class="custom-file-label">{% trans 'Choose file' %}</label>
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">HR Manager</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
-              </div>
-              <div class="form-group">
-                <label>{% trans 'Cover Letter' %} <span class="text-dark">({% trans 'Optional' %})</span></label>
-                <div class="custom-file">
-                  <input type="file" class="custom-file-input" id="applicantLetter">
-                  <label class="custom-file-label">{% trans 'Choose file' %}</label>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label>{% trans 'Full Name' %}</label>
+                            <input type="text" class="form-control" id="applicantName">
+                        </div>
+                        <div class="form-group">
+                            <label>{% trans 'E-mail Address' %}</label>
+                            <input type="email" class="form-control" id="applicantMail">
+                        </div>
+                        <div class="form-group">
+                            <label>CV</label>
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="applicantCV">
+                                <label class="custom-file-label">{% trans 'Choose file' %}</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>{% trans 'Cover Letter' %} <span
+                                    class="text-dark">({% trans 'Optional' %})</span></label>
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="applicantLetter">
+                                <label class="custom-file-label">{% trans 'Choose file' %}</label>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-light" data-dismiss="modal">{% trans 'Close' %}</button>
-            <button type="button" class="btn btn-secondary">{% trans 'Apply Now' %}</button>
-          </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-dismiss="modal">{% trans 'Close' %}</button>
+                    <button type="button" class="btn btn-secondary">{% trans 'Apply Now' %}</button>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
 {% endblock %}

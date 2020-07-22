@@ -28,7 +28,7 @@
                         <h4 class="">{{ obj.title }}</h4>
                         <ul class="list-inline mt-3">
                             <li class="list-inline-item mr-3">
-                                <span class="icon-map text-dark mr-2"></span>{{obj.job_location}}
+                                <span class="icon-map text-dark mr-2"></span>{% for objct in obj.job_location.all %} {{ objct.city_name }}, {% endfor %}
                             </li>
                             <li class="list-inline-item mr-3">
                                 <span class="icon-sector text-dark mr-2"></span>{{ obj.job_sector }}
