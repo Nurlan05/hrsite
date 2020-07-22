@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3440e64c-a2a7-4f1f-9391-f28272a85f67" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hrsystem/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/hrsystem/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/locale/az/LC_MESSAGES/django.mo" beforeDir="false" afterPath="$PROJECT_DIR$/locale/az/LC_MESSAGES/django.mo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/locale/az/LC_MESSAGES/django.po" beforeDir="false" afterPath="$PROJECT_DIR$/locale/az/LC_MESSAGES/django.po" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/locale/en/LC_MESSAGES/django.po" beforeDir="false" afterPath="$PROJECT_DIR$/locale/en/LC_MESSAGES/django.po" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/job/job-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/job/job-list.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -74,7 +68,7 @@
       <workItem from="1590097801492" duration="6735000" />
       <workItem from="1590142045516" duration="2044000" />
       <workItem from="1590787161605" duration="68000" />
-      <workItem from="1595425835798" duration="1861000" />
+      <workItem from="1595425835798" duration="2289000" />
     </task>
     <servers />
   </component>

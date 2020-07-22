@@ -123,8 +123,8 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.10/topics/i18n/
-MODELTRANSLATION_DEFAULT_LANGUAGE = 'az'
-LANGUAGE_CODE = 'az-az'
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'en'
+LANGUAGE_CODE = 'en'
 LANGUAGES = (
     ('az', 'Azerbaycan'),
     ('en', 'İngilis'),)
