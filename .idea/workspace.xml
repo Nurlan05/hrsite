@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3440e64c-a2a7-4f1f-9391-f28272a85f67" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/allapp/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/allapp/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/allapp/form.py" beforeDir="false" afterPath="$PROJECT_DIR$/allapp/form.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/allapp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/allapp/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/job/job-detal.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/job/job-detal.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/job/job-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/job/job-list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hrsystem/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/hrsystem/settings.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -81,7 +75,7 @@
       <workItem from="1595425835798" duration="6688000" />
       <workItem from="1595433971113" duration="1580000" />
       <workItem from="1595950145137" duration="269000" />
-      <workItem from="1596262198598" duration="1028000" />
+      <workItem from="1596262198598" duration="1276000" />
     </task>
     <servers />
   </component>
