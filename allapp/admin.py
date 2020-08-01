@@ -53,5 +53,5 @@ class JobAdmin(admin.ModelAdmin):
 	search_fields = ('title', 'content')
 @admin.register(CvSend)
 class CvSendAdmin(admin.ModelAdmin):
-	list_display = ('name','surname','apply_name','created_date')
-	list_display_link=('name','surname')
+	list_display = ('name','apply_name','created_date')
+	list_display_link=('name',)

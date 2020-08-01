@@ -5,7 +5,6 @@ from django.utils.translation import ugettext_lazy as _
 
 class CvSendForm(forms.ModelForm):
 	name=forms.CharField(label=_('Ad'))
-	surname=forms.CharField(label=_('Soyad'))
 	cv=forms.FileField(label=_('Cv'),widget=forms.FileInput(attrs={
         'class':'form-control-form-input',
         }
@@ -20,7 +19,6 @@ class CvSendForm(forms.ModelForm):
 		model=CvSend
 		fields=[
 			'name',
-			'surname',
 			'email',
 			'cv',
 			'cover_letter',
@@ -28,6 +26,5 @@ class CvSendForm(forms.ModelForm):
 			]
 		labels={
 		'name':_('Ad'),
-		'surname':_('Soyad'),
 		'cover_letter':_('Tövsiyyə Məktubu')
 		}

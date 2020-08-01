@@ -1,111 +1,155 @@
 {% extends 'base.html' %}
 {% load crispy_forms_tags %}
 {% load i18n %}
+{% block aditional_media %}
+    {{ form.media }}
+{% endblock %}
 {% block body %}
-  <!-- Breadcrumb -->
+    <!-- Breadcrumb -->
     <div class="container px-0 py-3">
-      <ol class="breadcrumb bg-white">
-        <li class="breadcrumb-item"><a href="{% url 'allapp:index' %}">{% trans 'Home' %}</a></li>
-        <li class="breadcrumb-item"><a href="{% url 'allapp:job_list' %}">{% trans  'Vacancies' %}</a></li>
-        <li class="breadcrumb-item active" aria-current="page">{{obj.title}}</li>
-      </ol>
+        <ol class="breadcrumb bg-white">
+            <li class="breadcrumb-item"><a href="{% url 'allapp:index' %}">{% trans 'Home' %}</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'allapp:job_list' %}">{% trans 'Vacancies' %}</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{ obj.title }}</li>
+        </ol>
     </div>
+
+    {% for msg in messages %}
+        {% if msg.tags == "success" %}
+
+    <div class="container px-0 py-3">
+            <div class="alert alert-success" role="alert">
+                {% trans 'Müraciətiniz uğurla qeydə alındı' %}!
+            </div>
+    </div>
+        {% endif %}
+    {% endfor %}
+    {% if form.errors %}
+
+    <div class="container px-0 py-3">
+        <div class="alert alert-danger" role="alert">
+            {{ form.errors|escape }}
+        </div>
+    </div>
+    {% endif %}
     <!-- Body -->
     <div class="container">
-      <h2 class="my-3">{{obj.title}}</h2>
-      <div class="row">
-        <!-- Job Preview -->
-        <div class="col-lg-9">
-          <!-- Info -->
-          <div class="container border rounded p-4 mb-4">
-            <div class="row">
-              <div class="col-md-3 col-sm-4 col-6 my-2">
-                <h6 class="text-primary">{% trans 'SECTOR' %}</h6>
-                <span>{{obj.job_sector}}</span>
-              </div>
-              <div class="col-md-3 col-sm-4 col-6 my-2">
-                <h6 class="text-primary">{% trans 'SALARY' %}</h6>
-                <span>{{ obj.salary }}</span>
-              </div>
-              <div class="col-md-3 col-sm-4 col-6 my-2">
-                <h6 class="text-primary">{% trans 'CONTRACT' %}</h6>
-                <span>{{obj.job_contract_type}}</span>
-              </div>
-              <div class="col-md-3 col-sm-4 col-6 my-2">
-                <h6 class="text-primary">{% trans 'LOCATION' %}</h6>
-                <span>{% for objct in obj.job_location.all %} {{ objct.city_name }}, {% endfor %}</span>
-              </div>
-{#              <div class="col-md-3 col-sm-4 col-6 my-2">#}
-{#                <h6 class="text-primary">PUBLISHED</h6>#}
-{#                <span>12 April 2020</span>#}
-{#              </div>#}
-              <div class="col-md-3 col-sm-4 col-6 my-2">
-                <h6 class="text-primary">{% trans 'EXPIRY DATE' %}</h6>
-                <span>{{obj.expiry_date|date:"j F Y"}}</span>
-              </div>
-              <div class="col my-2">
-                <h6 class="text-primary">{%trans 'EMAIL'  %}</h6>
-                <a href="#">{{ obj.email }}</a>
-              </div>
+        <h2 class="my-3">{{ obj.title }}</h2>
+        <div class="row">
+            <!-- Job Preview -->
+            <div class="col-lg-9">
+                <!-- Info -->
+                <div class="container border rounded p-4 mb-4">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-4 col-6 my-2">
+                            <h6 class="text-primary">{% trans 'SECTOR' %}</h6>
+                            <span>{{ obj.job_sector }}</span>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-6 my-2">
+                            <h6 class="text-primary">{% trans 'SALARY' %}</h6>
+                            <span>{{ obj.salary }}</span>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-6 my-2">
+                            <h6 class="text-primary">{% trans 'CONTRACT' %}</h6>
+                            <span>{{ obj.job_contract_type }}</span>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-6 my-2">
+                            <h6 class="text-primary">{% trans 'LOCATION' %}</h6>
+                            <span>{% for objct in obj.job_location.all %} {{ objct.city_name }}, {% endfor %}</span>
+                        </div>
+                        {#              <div class="col-md-3 col-sm-4 col-6 my-2">#}
+                        {#                <h6 class="text-primary">PUBLISHED</h6>#}
+                        {#                <span>12 April 2020</span>#}
+                        {#              </div>#}
+                        <div class="col-md-3 col-sm-4 col-6 my-2">
+                            <h6 class="text-primary">{% trans 'EXPIRY DATE' %}</h6>
+                            <span>{{ obj.expiry_date|date:"j F Y" }}</span>
+                        </div>
+                        <div class="col my-2">
+                            <h6 class="text-primary">{% trans 'EMAIL' %}</h6>
+                            <a href="#">{{ obj.email }}</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Description -->
+                <h5 class="mb-3">{% trans 'Job Description' %}</h5>
+                <p>
+                    {{ obj.content|safe }}
+                </p>
+                <button type="button" class="btn btn-secondary" data-toggle="modal"
+                        data-target="#jobApply">{% trans 'Apply Now' %}</button>
             </div>
-          </div>
-          <!-- Description -->
-          <h5 class="mb-3">{% trans 'Job Description' %}</h5>
-         <p>
-             {{ obj.content|safe }}
-         </p>
-          <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#jobApply">{% trans 'Apply Now' %}</button>
+            <!-- Buttons -->
+            <div class="col-3 d-none d-lg-block">
+                <button type="button" class="btn btn-secondary btn-block" data-toggle="modal"
+                        data-target="#jobApply">{% trans 'Apply Now' %}</button>
+                <a href="{% url 'allapp:job_list' %}" class="btn btn-primary btn-block"
+                   role="button">{% trans 'Latest Posted Jobs' %}</a>
+            </div>
         </div>
-        <!-- Buttons -->
-        <div class="col-3 d-none d-lg-block">
-          <button type="button" class="btn btn-secondary btn-block" data-toggle="modal" data-target="#jobApply">{% trans 'Apply Now' %}</button>
-          <a href="{% url 'allapp:job_list' %}" class="btn btn-primary btn-block" role="button">{% trans 'Latest Posted Jobs' %}</a>
-        </div>
-      </div>
     </div>
 
     <!-- Apply Form -->
     <div class="modal fade" id="jobApply" tabindex="-1" role="dialog">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">HR Manager</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <form>
-              <div class="form-group">
-                <label>{% trans 'Full Name' %}</label>
-                <input type="text" class="form-control" id="applicantName">
-              </div>
-              <div class="form-group">
-                <label>{% trans 'E-mail Address' %}</label>
-                <input type="email" class="form-control" id="applicantMail">
-              </div>
-              <div class="form-group">
-                <label>CV</label>
-                <div class="custom-file">
-                  <input type="file" class="custom-file-input" id="applicantCV">
-                  <label class="custom-file-label">{% trans 'Choose file' %}</label>
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">HR Manager</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
-              </div>
-              <div class="form-group">
-                <label>{% trans 'Cover Letter' %} <span class="text-dark">({% trans 'Optional' %})</span></label>
-                <div class="custom-file">
-                  <input type="file" class="custom-file-input" id="applicantLetter">
-                  <label class="custom-file-label">{% trans 'Choose file' %}</label>
+
+                    <form action="" method="post" enctype="multipart/form-data">
+                <div class="modal-body">
+                        {% csrf_token %}
+
+                        {% for field in form %}
+                            {% if field.name == "name" %}
+                                <div class="form-group">
+                                    <label>{% trans 'Full Name' %}</label>
+                                    <input type="text" class="form-control" id="id_{{ field.name }}"
+                                           name="{{ field.name }}">
+                                </div>
+                            {% endif %}
+                            {% if field.name == "email" %}
+                                <div class="form-group">
+                                    <label>{% trans 'E-mail Address' %}</label>
+                                    <input type="email" class="form-control" id="id_{{ field.name }}"
+                                           name="{{ field.name }}">
+                                </div>
+                            {% endif %}
+                            {% if field.name == "cv" %}
+                                <div class="form-group">
+                                    <label>CV</label>
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="id_{{ field.name }}"
+                                               name="{{ field.name }}">
+                                        <label class="custom-file-label">{% trans 'Choose file' %}</label>
+                                    </div>
+                                </div>
+                            {% endif %}
+                            {% if field.name == "cover_letter" %}
+                                <div class="form-group">
+                                    <label>{% trans 'Cover Letter' %} <span
+                                            class="text-dark">({% trans 'Optional' %})</span></label>
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="id_{{ field.name }}"
+                                               name="{{ field.name }}">
+                                        <label class="custom-file-label">{% trans 'Choose file' %}</label>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+
                 </div>
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-light" data-dismiss="modal">{% trans 'Close' %}</button>
-            <button type="button" class="btn btn-secondary">{% trans 'Apply Now' %}</button>
-          </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-dismiss="modal">{% trans 'Close' %}</button>
+                    <button type="submit" class="btn btn-secondary">{% trans 'Apply Now' %}</button>
+                </div>
+                </form>
+            </div>
         </div>
-      </div>
     </div>
 
 {% endblock %}

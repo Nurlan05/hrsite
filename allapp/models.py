@@ -150,7 +150,6 @@ class Job(models.Model):
 
 class CvSend(models.Model):
 	name=models.CharField(max_length=1500,verbose_name="Ad")
-	surname=models.CharField(max_length=1500,verbose_name="Soyad")
 	apply_for=models.CharField(max_length=1500,verbose_name="Job slug",editable=False,null=True,blank=True)
 	apply_name=models.CharField(max_length=1500,verbose_name="Job name",editable=False,null=True,blank=True)
 
@@ -159,7 +158,7 @@ class CvSend(models.Model):
 	cv=models.FileField(verbose_name='Cv')
 	cover_letter=models.FileField(verbose_name="Məktub")
 	def __str__(self):
-		return ('%s') %(self.name + " " + self.surname)
+		return ('%s') %(self.name)
 	class Meta:
 		verbose_name="CV"
 		verbose_name_plural="ALL CV"
