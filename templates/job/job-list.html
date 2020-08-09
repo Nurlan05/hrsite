@@ -15,9 +15,11 @@
         <div class="row">
             <div class="col-lg-4">
                 <div class="container border rounded p-4 mb-5">
+                    <form method="POST" id="vakansiyaForm">
+                                    {% csrf_token %}
                     <h5 class="mb-4">{% trans 'Filter Results' %}</h5>
                     <div class="d-flex">
-                        <input class="form-control" type="search" placeholder="{% trans 'Search for vacancies' %}">
+                        <input class="form-control" type="search" name="title" placeholder="Vakansiya axtar">
                         <button class="btn btn-light d-lg-none px-2 ml-2" type="button" data-toggle="collapse"
                                 data-target="#collapseFilter">
                             <span class="icon-menu px-1"></span>
@@ -28,86 +30,58 @@
                         <div class="navbar-collapse collapse mt-4" id="collapseFilter">
                             <!-- Sector -->
                             <a class="clearfix" data-toggle="collapse" href="#filterSector">
-                                <h5 class="float-left">Sector</h5>
+                                <h5 class="float-left">Job Type</h5>
                                 <h5 class="float-right dropdown-toggle"></h5>
                             </a>
                             <div class="collapse show filterlist" id="filterSector">
+                                {% for jtl in job_type_list %}
                                 <div class="custom-control custom-checkbox mt-1">
-                                    <input type="checkbox" class="custom-control-input" id="sectorCheck1">
-                                    <label class="custom-control-label" for="sectorCheck1">Oil</label>
+                                    <input type="checkbox" class="custom-control-input" id="jtl{{forloop.counter}}" name="jtl-{{jtl.id}}" value="{{jtl.job_name}}">
+                                    <label class="custom-control-label" for="jtl{{forloop.counter}}">{{jtl.job_name}}</label>
                                 </div>
-                                <div class="custom-control custom-checkbox mt-1">
-                                    <input type="checkbox" class="custom-control-input" id="sectorCheck2">
-                                    <label class="custom-control-label" for="sectorCheck2">Construction</label>
-                                </div>
-                                <div class="custom-control custom-checkbox mt-1">
-                                    <input type="checkbox" class="custom-control-input" id="sectorCheck3">
-                                    <label class="custom-control-label" for="sectorCheck3">Technology</label>
-                                </div>
-                                <div class="custom-control custom-checkbox mt-1">
-                                    <input type="checkbox" class="custom-control-input" id="sectorCheck4">
-                                    <label class="custom-control-label" for="sectorCheck4">Finance</label>
-                                </div>
-                                <div class="custom-control custom-checkbox mt-1">
-                                    <input type="checkbox" class="custom-control-input" id="sectorCheck5">
-                                    <label class="custom-control-label" for="sectorCheck5">Education</label>
-                                </div>
-                                <div class="custom-control custom-checkbox mt-1">
-                                    <input type="checkbox" class="custom-control-input" id="sectorCheck6">
-                                    <label class="custom-control-label" for="sectorCheck6">Industry</label>
-                                </div>
+                                {% endfor %}
                             </div>
                             <hr class="mt-2">
                             <!-- Job Type -->
                             <a class="clearfix" data-toggle="collapse" href="#filterJobtype">
-                                <h5 class="float-left">Job Type</h5>
+                                <h5 class="float-left">Experience</h5>
                                 <h5 class="float-right dropdown-toggle"></h5>
                             </a>
                             <div class="collapse show" id="filterJobtype">
+                                {% for ell in experience_level_list %}
                                 <div class="custom-control custom-checkbox mt-1">
-                                    <input type="checkbox" class="custom-control-input" id="sectorCheck1">
-                                    <label class="custom-control-label" for="sectorCheck1">Oil</label>
+                                    <input type="checkbox" class="custom-control-input" id="ell{{forloop.counter}}" name="ell-{{ell.id}}" value="{{ell.experience_name}}">
+                                    <label class="custom-control-label" for="ell{{forloop.counter}}">{{ell.experience_name}}</label>
                                 </div>
-                                <div class="custom-control custom-checkbox mt-1">
-                                    <input type="checkbox" class="custom-control-input" id="sectorCheck2">
-                                    <label class="custom-control-label" for="sectorCheck2">Construction</label>
-                                </div>
-                                <div class="custom-control custom-checkbox mt-1">
-                                    <input type="checkbox" class="custom-control-input" id="sectorCheck3">
-                                    <label class="custom-control-label" for="sectorCheck3">Technology</label>
-                                </div>
+                                {% endfor %}
                             </div>
                             <hr class="mt-2">
                             <!-- Experience -->
                             <a class="clearfix" data-toggle="collapse" href="#filterLevel">
-                                <h5 class="float-left">Sector</h5>
+                                <h5 class="float-left">Industry</h5>
                                 <h5 class="float-right dropdown-toggle"></h5>
                             </a>
                             <div class="collapse show" id="filterLevel">
+                                {% for il in industry_list %}
                                 <div class="custom-control custom-checkbox mt-1">
-                                    <input type="checkbox" class="custom-control-input" id="sectorCheck1">
-                                    <label class="custom-control-label" for="sectorCheck1">Oil</label>
+                                    <input type="checkbox" class="custom-control-input" id="il{{forloop.counter}}" name="il-{{il.id}}" value="{{il.industry_name}}">
+                                    <label class="custom-control-label" for="il{{forloop.counter}}">{{il.industry_name}}</label>
                                 </div>
-                                <div class="custom-control custom-checkbox mt-1">
-                                    <input type="checkbox" class="custom-control-input" id="sectorCheck2">
-                                    <label class="custom-control-label" for="sectorCheck2">Construction</label>
-                                </div>
-                                <div class="custom-control custom-checkbox mt-1">
-                                    <input type="checkbox" class="custom-control-input" id="sectorCheck3">
-                                    <label class="custom-control-label" for="sectorCheck3">Technology</label>
-                                </div>
+                                {% endfor %}
                             </div>
                             <hr class="mt-2">
                             <!-- Reset -->
-                            <button type="button" class="btn btn-dark btn-sm">{% trans 'Reset Filters' %}</button>
+                            <input id='formFilter' type="submit" value="{% trans 'Reset Filters' %}" class="btn btn-dark btn-sm">
+                    </form>
                         </div>
                     </div>
                 </div>
             </div>
             <!-- List -->
-            <div class="col-lg-8">
+            <div id='jobLst' class="col-lg-8">
                 {#          <h5 class="mb-4"><span class="text-secondary">24</span> {% trans 'Vacancies Found' %}</h5>#}
                 <!-- Job box -->
+            <div class="job">
                 {% for obj in jobs %}
                     <div class="container border rounded p-4 mb-4">
                         <div class="d-flex justify-content-md-between flex-column-reverse flex-md-row mb-2">
@@ -127,7 +101,7 @@
                                 data-target="#jobApply">{% trans 'Apply Now' %}</button>
                     </div>
                 {% endfor %}
-
+            </div>
 
 {#                <nav>#}
 {#                    <ul class="pagination justify-content-end">#}
@@ -185,4 +159,28 @@
             </div>
         </div>
     </div>
+
+{% endblock %}
+
+
+{% block js %}
+<script>
+     $(document).ready(function(){
+    var myForm = $('#vakansiyaForm');
+    myForm.submit(function (event) {
+        event.preventDefault();
+        var formData = $(this).serialize();
+        $.ajax({
+            method : "POST",
+            url : '{% url "allapp:reset-filters" %}',
+            data: formData,
+            dataType: 'json',
+            success: function (data) {
+                $('.job').remove();
+                $('#jobLst').html(data.include_)
+            }
+        });
+    })
+});
+</script>
 {% endblock %}

@@ -22,6 +22,8 @@ urlpatterns=[
 
     url(r'^haqqimizda/$',about_us, name="aboutus"),
     url(r'^elaqe/$',contact_us, name="contact"),
-    url(r'^cv-list/$',cv_list_view, name="cv-list")
+    url(r'^cv-list/$',cv_list_view, name="cv-list"),
+
+    url(r'^resetFilters/$',reset_filters,name='reset-filters'),
 
 ]

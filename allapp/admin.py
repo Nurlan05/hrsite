@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import AboutUs,ContactUs,CvSend,Job,Location,Sector,JobType,ExperienceLevel,ContractType,Hours
+from .models import AboutUs,ContactUs,CvSend,Job,Location,Sector,JobType,ExperienceLevel,ContractType,Hours,Industry
 
 
 @admin.register(AboutUs)
@@ -39,6 +39,9 @@ class ExperienceLevelAdmin(admin.ModelAdmin):
 	exclude=('experience_name',)
 	list_display = ('experience_name','slug')
 
+@admin.register(Industry)
+class IndustryAdmin(admin.ModelAdmin):
+	list_display = ('id','industry_name')
 
 @admin.register(Hours)
 class HoursAdmin(admin.ModelAdmin):

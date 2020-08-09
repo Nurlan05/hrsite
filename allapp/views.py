@@ -1,11 +1,14 @@
 from django.shortcuts import render, get_object_or_404, redirect,HttpResponseRedirect
-from allapp.models import AboutUs,ContactUs,CvSend,Job,Location,Sector,JobType,ExperienceLevel,ContractType,Hours
+from allapp.models import AboutUs,ContactUs,CvSend,Job,Location,Sector,JobType,ExperienceLevel,ContractType,Hours,Industry
 from allapp.form import CvSendForm
 from django.contrib import messages
 from django.utils.translation import ugettext_lazy as _
 from django.db.models import Q
 from .filters import JobFilter
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.http import JsonResponse
+from django.template.loader import render_to_string
+
 
 def index(request):
 	context={}
@@ -24,6 +27,7 @@ def job_list(request):
 	context['experience_level_list']=ExperienceLevel.objects.all()
 	context['hours_list']=Hours.objects.all()
 	context['contract_type_list']=ContractType.objects.all()
+	context['industry_list']=Industry.objects.all()
 	filter=JobFilter(request.GET,queryset=job_list)
 	context['filter']=filter
 	job_list=Job.objects.filter(draft=True)
@@ -49,6 +53,58 @@ def job_list(request):
 	return render(request,'job/job-list.html',context)
 
 
+def reset_filters(request):
+	data={}
+	jtls = JobType.objects.all()
+	ells = ExperienceLevel.objects.all()
+	ils = Industry.objects.all()
+	jtls_list = []
+	ells_list = []
+	ils_list = []
+	for jtl in jtls:
+		id_ = str(jtl.id)
+		try:
+			jtls_list.append(request.POST['jtl-'+id_])
+		except:
+			pass
+	for ell in ells:
+		id_ = str(ell.id)
+		try:
+			ells_list.append(request.POST['ell-'+id_])
+		except:
+			pass
+	for il in ils:
+		id_ = str(il.id)
+		try:
+			ils_list.append(request.POST['il-'+id_])
+		except:
+			pass
+
+	if len(jtls_list) == 0:
+		vak = Job.objects.filter(draft=True)
+	else:
+		vak = Job.objects.filter(draft=True).filter(job_type__job_name__in=jtls_list)
+
+	if len(ells_list) == 0:
+		vakansiyalar = vak
+	else:
+		vakansiyalar = vak.filter(job_experience_level__experience_name__in = ells_list)
+
+	if len(ils_list) == 0:
+		vakansiyalars = vakansiyalar
+	else:
+		vakansiyalars = vakansiyalar.filter(job_industry_type__industry_name__in=ils_list)
+
+	try:
+		title_ = request.POST['title']
+		if not title_ == "":
+			vakansiyalars = vakansiyalars.filter(title__icontains=title_)
+		else:
+			vakansiyalars = vakansiyalars
+	except:
+		pass
+	data['include_'] = render_to_string('job/include.html', {'vakansiyalar': vakansiyalars}, request)
+	return JsonResponse(data)
 
 def location_view(request,slug):
 	loc=get_object_or_404(Location,slug=slug)
