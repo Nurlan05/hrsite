@@ -1,20 +1,23 @@
+{% load static i18n %}                  
                    <div class="job">
-                    {% for vakansiya in vakansiyalar %}
+                    {% for obj in vakansiyalar %}
+                    
                     <div class="container border rounded p-4 mb-4">
                         <div class="d-flex justify-content-md-between flex-column-reverse flex-md-row mb-2">
-                            <h4 class="">{{vakansiya.title}}</h4>
+                            <h4 class="">{{ obj.title }}</h4>
+                            <small class="text-dark">son tarix : {{ obj.expiry_date | date:"j F Y" }}</small>
                         </div>
                         <div class="d-flex flex-wrap mb-2">
                             <div class="mr-4"><span class="icon-map text-dark mr-2"></span>
-                                {{vakansiya.location}} </div>
-                            <div class="mr-4"><span class="text-dark mr-2">Experience:</span>{{vakansiya.experience}}</div>
-                            <div class="mr-4"><span class="text-dark mr-2">Salary:</span>{{vakansiya.salary}}</div>
-                            <div class="mr-4"><span class="text-dark mr-2">Sector:</span>{{vakansiya.sector}}</div>
+                                {% for objct in obj.job_location.all %} {{ objct.city_name }}, {% endfor %}</div>
+                            <div class="mr-4"><span class="icon-salary text-dark mr-2"></span>{{ obj.salary }}</div>
+                            <div class="mr-4"><span class="icon-sector text-dark mr-2"></span>{{ obj.job_sector }}</div>
+                            <div class="mr-4"><span class="icon-contract text-dark mr-2"></span>{{obj.job_contract_type}}</div>
                         </div>
-                        <p class="text-dark"></p>
-                        <a href="#" class="btn btn-info btn-sm mr-2" role="button">Ətraflı</a>
+                        <p class="text-dark">{{ obj.content | safe|slice:":150" }}</p>
+                        <a href="{{ obj.get_absolute_url }}" class="btn btn-info btn-sm mr-2" role="button">{% trans 'Read More' %}</a>
                         <button type="button" class="btn btn-secondary btn-sm" data-toggle="modal"
-                                data-target="#jobApply">İndi Müraciət Et</button>
+                                data-target="#jobApply">{% trans 'Apply Now' %}</button>
                     </div>
                     {% endfor %}
                     </div>

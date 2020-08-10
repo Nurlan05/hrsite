@@ -71,7 +71,7 @@
                             </div>
                             <hr class="mt-2">
                             <!-- Reset -->
-                            <input id='formFilter' type="submit" value="{% trans 'Reset Filters' %}" class="btn btn-dark btn-sm">
+                            <input id='formFilter' type="submit" value="{% trans 'Search' %}" class="btn btn-dark btn-sm">
                     </form>
                         </div>
                     </div>
@@ -183,4 +183,21 @@
     })
 });
 </script>
+        <script>
+            $('#applicantLetter').on('change',function(){
+                //get the file name
+                var fileName = $(this).val();
+                //replace the "Choose a file" label
+                $(this).next('.custom-file-label').html(fileName);
+            })
+        </script>
+
+        <script>
+            $('#applicantCV').on('change',function(){
+                //get the file name
+                var fileName = $(this).val();
+                //replace the "Choose a file" label
+                $(this).next('.custom-file-label').html(fileName);
+            })
+        </script>
 {% endblock %}
