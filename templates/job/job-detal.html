@@ -123,7 +123,7 @@
                                 <div class="form-group">
                                     <label>CV</label>
                                     <div class="custom-file">
-                                        <input type="file" class="custom-file-input" id="id_{{ field.name }}"
+                                        <input type="file" class="custom-file-input" id="id_cv"
                                                name="{{ field.name }}">
                                         <label class="custom-file-label">{% trans 'Choose file' %}</label>
                                     </div>
@@ -134,7 +134,7 @@
                                     <label>{% trans 'Cover Letter' %} <span
                                             class="text-dark">({% trans 'Optional' %})</span></label>
                                     <div class="custom-file">
-                                        <input type="file" class="custom-file-input" id="id_{{ field.name }}"
+                                        <input type="file" class="custom-file-input" id="id_cover_letter"
                                                name="{{ field.name }}">
                                         <label class="custom-file-label">{% trans 'Choose file' %}</label>
                                     </div>
@@ -155,7 +155,7 @@
 
 
         <script>
-            $('#applicantLetter').on('change',function(){
+            $('#id_cv').on('change',function(){
                 //get the file name
                 var fileName = $(this).val();
                 //replace the "Choose a file" label
@@ -164,7 +164,7 @@
         </script>
 
         <script>
-            $('#applicantCV').on('change',function(){
+            $('#id_cover_letter').on('change',function(){
                 //get the file name
                 var fileName = $(this).val();
                 //replace the "Choose a file" label
